@@ -1,0 +1,22 @@
+/* App-header */
+#Exp-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#Exp-wrapper > header {
+  height: 80px;
+  text-align: center;
+  border: 1px solid red;
+}
+
+#Exp-wrapper > footer {
+  height: 80px;
+  border: 1px solid red;
+}
+
+#Exp-wrapper > main {
+  flex: 1;
+  border: 1px solid red;
+}

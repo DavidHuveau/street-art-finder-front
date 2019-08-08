@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
-import ArtworksExplore from './components/ArtworksExplore/ArtworksExplore';
+import ArtworksExplore from "./components/ArtworksExplore/ArtworksExplore";
+import ArtworkSuggest from "./components/ArtworkSuggest/ArtworkSuggest";
+
 // import { Button, Alert } from "react-bootstrap";
 
 const App: React.FC = () => {
@@ -12,7 +14,7 @@ const App: React.FC = () => {
       </header> */}
 
       <ArtworksExplore />
-
+      {/* <ArtworkSuggest /> */}
     </div>
   );
 };

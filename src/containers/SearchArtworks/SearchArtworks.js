@@ -2,7 +2,12 @@ import React, { Component } from "react";
 
 class SearchArtworks extends Component {
   render() {
-    return <div>SearchArtworks</div>;
+    // City...
+    return (
+      <div style={ {border: "solid 1px green"} }>
+        SearchArtworks
+      </div>
+    );
   }
 }
 
