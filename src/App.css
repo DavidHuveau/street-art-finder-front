@@ -13,6 +13,74 @@
   color: white;
 } */
 
+.left-xs {
+  margin-left: 5px;
+}
+
+.left-sm {
+  margin-left: 10px;
+}
+
+.left-lg {
+  margin-left: 24px;
+}
+
+.right-xs {
+  margin-right: 5px;
+}
+
+.right-sm {
+  margin-right: 10px;
+}
+
+.right-lg {
+  margin-right: 24px;
+}
+
+.down-xs {
+  margin-top: 5px;
+}
+
+.down-md {
+  margin-top: 10px;
+}
+
+.down-lg {
+  margin-top: 24px;
+}
+
+.up-xs {
+  margin-bottom: 5px;
+}
+
+.up-md {
+  margin-bottom: 10px;
+}
+
+.up-lg {
+  margin-bottom: 24px;
+}
+
+h1 {
+  color: #f26456;
+  font-size: 25px;
+}
+
+h1 {
+  color: #f26456;
+  font-size: 20px;
+}
+
+h3 {
+  color: #f26456;
+  font-size: 15px;
+}
+
+.box {
+  padding: 24px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
 .App-link {
   color: #61dafb;
 }
