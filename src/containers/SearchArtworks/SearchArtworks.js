@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./SearchArtworks.css";
-import "../../App.css";
 import { InputGroup, Button, FormControl } from "react-bootstrap";
 import PropTypes from "prop-types";
 

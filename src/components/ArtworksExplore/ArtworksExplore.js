@@ -5,10 +5,9 @@ import ArtworksMap from "../../containers/ArtworksMap/ArtworksMap";
 import SearchArtworks from "../../containers/SearchArtworks/SearchArtworks";
 
 const ArtworksExplore = () => {
-
-  const getData = (cityCriteria) => {
+  const getData = cityCriteria => {
     console.log(cityCriteria);
-  }
+  };
 
   return (
     <div id="Exp-wrapper">
