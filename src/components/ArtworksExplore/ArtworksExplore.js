@@ -5,11 +5,16 @@ import ArtworksMap from "../../containers/ArtworksMap/ArtworksMap";
 import SearchArtworks from "../../containers/SearchArtworks/SearchArtworks";
 
 const ArtworksExplore = () => {
+
+  const getData = (cityCriteria) => {
+    console.log(cityCriteria);
+  }
+
   return (
     <div id="Exp-wrapper">
       <header>
         <h1>Street Art Finder</h1>
-        <SearchArtworks />
+        <SearchArtworks search={getData} />
       </header>
       <main>
         <ArtworksMap />
