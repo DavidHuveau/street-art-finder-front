@@ -7,7 +7,7 @@ import MarkerLocation from "../MarkerLocation/MarkerLocation";
 import MarkerClusterGroup from "../MarkerClusterGroup/MarkerClusterGroup";
 import dataWithGeo from "../../../constants/data-with-geo";
 
-const START_POSITION = [37.77492, -122.41941];
+const START_POSITION = [49.257786, 4.031926];
 const ZOOM = 13;
 
 export default () => {

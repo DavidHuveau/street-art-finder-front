@@ -10,12 +10,15 @@ const myIcon = L.icon({
   popupAnchor: [-3, -76]
 });
 
-export default (props) => {
-  const { geo: position, location } = props.mark;
+export default props => {
+  const { location: position, _id, description, photoFileName } = props.mark;
   return (
-    <Marker position={position} icon={myIcon}>
+    <Marker position={position.coordinates} icon={myIcon}>
       <Popup>
-        <b>{location}</b>
+        <b>{_id}</b>
+        <b>{description}</b>
+        <div>{`[${position.coordinates[0]},${position.coordinates[1]}]`}</div>
+        <div>{photoFileName}</div>
       </Popup>
     </Marker>
   );
