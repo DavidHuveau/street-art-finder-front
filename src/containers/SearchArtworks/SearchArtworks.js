@@ -24,10 +24,10 @@ class SearchArtworks extends Component {
 
   onClickSearch() {
     const { valueCriteria } = this.state;
-    const { search } = this.props;
+    const { onSearch } = this.props;
 
     // console.log(valueCriteria);
-    search(valueCriteria);
+    onSearch(valueCriteria);
   }
 
   onClickClear() {
@@ -72,9 +72,9 @@ class SearchArtworks extends Component {
 export default SearchArtworks;
 
 SearchArtworks.propTypes = {
-  search: PropTypes.func.isRequired
+  onSearch: PropTypes.func.isRequired
 };
 
 SearchArtworks.defaultProps = {
-  search: () => {}
+  onSearch: () => {}
 };
