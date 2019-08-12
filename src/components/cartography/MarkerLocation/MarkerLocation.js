@@ -10,7 +10,6 @@ const myIcon = L.icon({
   popupAnchor: [-3, -76]
 });
 
-//class FilmingLocation extends Component {
 export default (props) => {
   const { geo: position, location } = props.mark;
   return (
@@ -21,5 +20,3 @@ export default (props) => {
     </Marker>
   );
 };
-
-// export default FilmingLocation;

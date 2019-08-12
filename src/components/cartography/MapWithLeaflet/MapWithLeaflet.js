@@ -3,7 +3,7 @@ import "./MapWithLeaflet.css";
 import "leaflet/dist/leaflet.css";
 import "react-leaflet-markercluster/dist/styles.min.css";
 import { Map, TileLayer, Circle } from "react-leaflet";
-import FilmingLocation from "../FilmingLocation/FilmingLocation";
+import MarkerLocation from "../MarkerLocation/MarkerLocation";
 import MarkerClusterGroup from "../MarkerClusterGroup/MarkerClusterGroup";
 import dataWithGeo from "../../../constants/data-with-geo";
 
@@ -19,7 +19,7 @@ export default () => {
       />
       <MarkerClusterGroup showCoverageOnHover={false}>
         {dataWithGeo.slice(0, 1000).map((e, i) => (
-          <FilmingLocation key={i} mark={e} />
+          <MarkerLocation key={i} mark={e} />
         ))}
       </MarkerClusterGroup>
       <Circle
