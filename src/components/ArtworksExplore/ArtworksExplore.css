@@ -19,3 +19,12 @@
   flex: 1;
   border: 1px solid red;
 }
+
+/* @media screen and (max-width: 960px) {
+  .mobileOnly {
+      display: block;
+  }
+  .desktopOnly {
+      display: none;
+  }
+} */
