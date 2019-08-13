@@ -1,7 +1,12 @@
 import React from "react";
+import "./MarkerLocation.css";
 import { Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import icon from "./icon.png";
+import {Button} from "react-bootstrap";
+
+// const THUMBNAIL_WIDTH = 200;
+// const THUMBNAIL_HEIGHT = 200;
 
 const myIcon = L.icon({
   iconUrl: icon,
@@ -15,10 +20,12 @@ export default props => {
   return (
     <Marker position={position.coordinates} icon={myIcon}>
       <Popup>
-        <b>{_id}</b>
-        <b>{description}</b>
+        {/* <b>{_id}</b>
+        <div>{description}</div>
         <div>{`[${position.coordinates[0]},${position.coordinates[1]}]`}</div>
-        <div>{photoFileName}</div>
+        <div>{photoFileName}</div> */}
+        <img src="https://placem.at/people?w=100&h=100&random=1" alt={photoFileName} width='100px'/><br />
+        <Button>Show</Button>
       </Popup>
     </Marker>
   );
