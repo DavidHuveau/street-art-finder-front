@@ -16,11 +16,8 @@ const myIcon = L.icon({
 });
 
 export default props => {
-  const { location: position, _id, photoFileName } = props.mark;
-
-  const showArtworkInfos = id => {
-    console.log(id);
-  };
+  const { showArtworkInfosPane } = props;
+  const { location: position, photoFileName } = props.mark;
 
   return (
     <Marker position={position.coordinates} icon={myIcon}>
@@ -34,7 +31,7 @@ export default props => {
           width="100px"
         />
         <br />
-        <Button onClick={() => showArtworkInfos(_id)}>Show</Button>
+        <Button onClick={showArtworkInfosPane}>Show</Button>
       </Popup>
     </Marker>
   );

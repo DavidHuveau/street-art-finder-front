@@ -5,36 +5,28 @@ import SlidingPane from "react-sliding-pane";
 import Modal from "react-modal";
 
 class ArtworkInfosPane extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isPaneOpen: false
-    };
-  }
 
   componentDidMount() {
     Modal.setAppElement(this.el);
   }
 
   render() {
+    const {isOpen, onRequestClose, artworkData} = this.props;
+
     return (
-      <div ref={ref => (this.el = ref)}>
-        <button onClick={() => this.setState({ isPaneOpen: true })}>
-          Click me to open right pane!
-        </button>
+      artworkData && <div ref={ref => (this.el = ref)}>
         <SlidingPane
           // className="width-100-xs width-80-sm"
-          isOpen={this.state.isPaneOpen}
+          isOpen={isOpen}
           title={"title"}
           subtitle={"subtitle"}
           from="right"
           width="100%"
-          onRequestClose={() => {
-            this.setState({ isPaneOpen: false });
-          }}
+          onRequestClose={onRequestClose}
         >
-          <div>And I am pane content. BTW, what rocks?</div>
-          <br />
+        <b>{artworkData._id}</b>
+        {/* <div>{`[${artworkData.position.coordinates[0]},${artworkData.position.coordinates[1]}]`}</div> */}
+        <div>{artworkData.photoFileName}</div>
         </SlidingPane>
       </div>
     );
