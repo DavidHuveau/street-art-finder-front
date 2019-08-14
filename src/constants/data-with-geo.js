@@ -5,9 +5,9 @@ const datas = [
       type: "Point"
     },
     isActivated: true,
-    isPublished: false,
+    isPublished: true,
     _id: "5c934b9dfa82fc068259a4c5",
-    userName: "Hôtel Mercure Reims Centre Cathedrale",
+    userName: "Davis",
     adressStreet: "31 boulevard paul doumer",
     zipCode: "51723",
     city: "REIMS",
@@ -27,7 +27,7 @@ const datas = [
       type: "Point"
     },
     isActivated: true,
-    isPublished: false,
+    isPublished: true,
     _id: "5c91f3a319607009fa212852",
     userName: "Estelle",
     adressStreet: "26 bis boulevard pasteur",

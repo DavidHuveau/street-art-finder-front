@@ -26,7 +26,7 @@ export default props => {
         <div>{`[${position.coordinates[0]},${position.coordinates[1]}]`}</div>
         <div>{photoFileName}</div> */}
         <img
-          src="https://placem.at/people?w=100&h=100&random=1"
+          src="https://placem.at/places?w=100&h=100&random=1"
           alt={photoFileName}
           width="100px"
         />

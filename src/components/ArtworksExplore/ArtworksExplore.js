@@ -13,7 +13,7 @@ const ArtworksExplore = () => {
     <div>
       <div id="Exp-wrapper">
         <header>
-          <h1>Street Art Finder</h1>
+          <h1 className="title">Street Art Finder</h1>
           <SearchArtworks onSearch={getData} />
         </header>
         <main>
