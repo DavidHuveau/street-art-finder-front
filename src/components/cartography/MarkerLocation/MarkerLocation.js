@@ -3,7 +3,7 @@ import "./MarkerLocation.css";
 import { Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import icon from "./icon.png";
-import {Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 // const THUMBNAIL_WIDTH = 200;
 // const THUMBNAIL_HEIGHT = 200;
@@ -16,16 +16,25 @@ const myIcon = L.icon({
 });
 
 export default props => {
-  const { location: position, _id, description, photoFileName } = props.mark;
+  const { location: position, _id, photoFileName } = props.mark;
+
+  const showArtworkInfos = id => {
+    console.log(id);
+  };
+
   return (
     <Marker position={position.coordinates} icon={myIcon}>
       <Popup>
         {/* <b>{_id}</b>
-        <div>{description}</div>
         <div>{`[${position.coordinates[0]},${position.coordinates[1]}]`}</div>
         <div>{photoFileName}</div> */}
-        <img src="https://placem.at/people?w=100&h=100&random=1" alt={photoFileName} width='100px'/><br />
-        <Button>Show</Button>
+        <img
+          src="https://placem.at/people?w=100&h=100&random=1"
+          alt={photoFileName}
+          width="100px"
+        />
+        <br />
+        <Button onClick={() => showArtworkInfos(_id)}>Show</Button>
       </Popup>
     </Marker>
   );
