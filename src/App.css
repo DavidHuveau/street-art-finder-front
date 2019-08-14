@@ -61,19 +61,23 @@
   margin-bottom: 24px;
 }
 
-h1.title {
+.main-color {
   color: #f26456;
+}
+
+h1 {
   font-size: 35px;
+  font-weight: 400;
 }
 
-h2.title {
-  color: #f26456;
+h2 {
   font-size: 20px;
+  font-weight: 400;
 }
 
-h3.title {
-  color: #f26456;
+h3 {
   font-size: 15px;
+  font-weight: 400;
 }
 
 .box {
@@ -81,7 +85,7 @@ h3.title {
   border-bottom: 1px solid #f2f2f2;
 }
 
-div>.box:last-child {
+div > .box:last-child {
   border-bottom: 0;
 }
 

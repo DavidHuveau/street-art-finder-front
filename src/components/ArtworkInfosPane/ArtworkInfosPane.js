@@ -10,6 +10,12 @@ class ArtworkInfosPane extends Component {
     Modal.setAppElement(this.el);
   }
 
+  renderDateInfo(date) {
+    moment.locale();
+    const displayDate = moment(date).format("LL");
+    return <>{`Created ${displayDate}`}</>;
+  }
+
   render() {
     const { isOpen, onRequestClose, artworkData } = this.props;
     if (!artworkData) return null;
@@ -22,7 +28,10 @@ class ArtworkInfosPane extends Component {
       country,
       createdAt,
       description
+      // isActivated
     } = artworkData;
+
+    // const status = isActivated ? "active" : "inactive";
 
     return (
       <div ref={ref => (this.el = ref)}>
@@ -42,14 +51,17 @@ class ArtworkInfosPane extends Component {
             }}
           />
           <div className="box">
-            <p>{`Created ${createdAt}`}</p>
-            <div id="Infos-adress">{`${adressStreet}, ${zipCode}, ${city}`}</div>
-            <div>{`${country.name}`}</div>
+            {this.renderDateInfo(createdAt)}
+            <div id="Infos-adress" className="main-color">
+              {`${adressStreet}, ${zipCode}, ${city}`}
+              {/* {`${adressStreet}, ${zipCode}, ${city}, ${status}`} */}
+            </div>
+            <>{`${country.name}`}</>
           </div>
           <div className="box">
-            <p>
-              Suggested by<span> {userName}</span>
-            </p>
+            <h2>
+              Suggested by<span className="main-color"> {userName}</span>
+            </h2>
             <p>{description}</p>
           </div>
         </SlidingPane>
