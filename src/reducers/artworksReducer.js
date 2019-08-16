@@ -6,22 +6,20 @@ const initialState = {
   error: null
 };
 
-const artworksByCity = (state = initialState, action) => {
-  debugger
+const artworks = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.RECEIVE_ARTWORKS_REQUEST:
       return {
         ...state,
         isFetching: true,
+        items: [],
         error: null
       };
     case ActionTypes.RECEIVE_ARTWORKS_SUCCESS:
-      debugger;
       return {
         ...state,
         isFetching: false,
-        items: action.payload.data,
-        lastUpdated: action.receivedAt,
+        items: action.payload,
         error: null
       };
     case ActionTypes.RECEIVE_ARTWORKS_FAILURE:
@@ -36,4 +34,4 @@ const artworksByCity = (state = initialState, action) => {
   }
 };
 
-export default artworksByCity;
+export default artworks;

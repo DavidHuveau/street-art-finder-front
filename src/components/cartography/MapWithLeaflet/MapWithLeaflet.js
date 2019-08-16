@@ -5,13 +5,13 @@ import "react-leaflet-markercluster/dist/styles.min.css";
 import { Map, TileLayer, Circle } from "react-leaflet";
 import MarkerLocation from "../MarkerLocation/MarkerLocation";
 import MarkerClusterGroup from "../MarkerClusterGroup/MarkerClusterGroup";
-import dataWithGeo from "../../../constants/data-with-geo";
+// import dataWithGeo from "../../../constants/data-with-geo";
 
 const START_POSITION = [49.257786, 4.031926];
 const ZOOM = 13;
 
 export default props => {
-  const { showArtworkInfosPane } = props;
+  const { showArtworkInfosPane, artworks } = props;
 
   return (
     <Map className="MyMap" center={START_POSITION} zoom={ZOOM} maxZoom={20}>
@@ -20,7 +20,7 @@ export default props => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <MarkerClusterGroup showCoverageOnHover={false}>
-        {dataWithGeo.slice(0, 1000).map((artworkInfos, i) => (
+        {artworks.slice(0, 1000).map((artworkInfos, i) => (
           <MarkerLocation
             key={i}
             mark={artworkInfos}

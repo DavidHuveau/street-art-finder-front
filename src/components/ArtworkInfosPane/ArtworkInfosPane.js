@@ -17,8 +17,8 @@ class ArtworkInfosPane extends Component {
   }
 
   render() {
-    const { isOpen, onRequestClose, artworkData } = this.props;
-    if (!artworkData) return null;
+    const { isOpen, onRequestClose, selectedArtwork } = this.props;
+    if (!selectedArtwork) return null;
 
     const {
       userName,
@@ -29,7 +29,7 @@ class ArtworkInfosPane extends Component {
       createdAt,
       description
       // isActivated
-    } = artworkData;
+    } = selectedArtwork;
 
     // const status = isActivated ? "active" : "inactive";
 

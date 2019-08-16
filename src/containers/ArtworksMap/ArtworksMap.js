@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MapWithLeaflet from "../../components/cartography/MapWithLeaflet/MapWithLeaflet";
 import ArtworkInfosPane from "../../components/ArtworkInfosPane/ArtworkInfosPane";
+import { connect } from "react-redux";
 
 class ArtworksMap extends Component {
   constructor(props) {
@@ -28,18 +29,33 @@ class ArtworksMap extends Component {
 
   render() {
     const { isArtworkInfosPaneOpen, selectedArtwork } = this.state;
+    const { artworks } = this.props;
 
     return (
       <div>
-        <MapWithLeaflet showArtworkInfosPane={this.showArtworkInfosPane} />
+        <MapWithLeaflet
+          artworks={artworks}
+          showArtworkInfosPane={this.showArtworkInfosPane}
+        />
         <ArtworkInfosPane
           isOpen={isArtworkInfosPaneOpen}
           onRequestClose={this.onRequestClose}
-          artworkData={selectedArtwork}
+          selectedArtwork={selectedArtwork}
         />
       </div>
     );
   }
 }
 
-export default ArtworksMap;
+const mapStateToProps = state => {
+  const { artworks } = state;
+  return {
+    artworks: artworks.items,
+    isFetching: artworks.isFetching
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(ArtworksMap);

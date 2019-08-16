@@ -6,11 +6,10 @@ import SearchArtworks from "../../containers/SearchArtworks/SearchArtworks";
 import { connect } from "react-redux";
 import { fetchArtworks } from "../../actions/ArtworksActionCreators";
 
-const ArtworksExplore = (props) => {
+const ArtworksExplore = props => {
   const getData = cityCriteria => {
     const { fetchArtworks } = props;
-    console.log(cityCriteria);
-    debugger
+    // console.log(cityCriteria);
     fetchArtworks(cityCriteria);
   };
 
@@ -33,7 +32,7 @@ const ArtworksExplore = (props) => {
 };
 
 const mapDispatchToProps = {
-  fetchArtworks: fetchArtworks
+  fetchArtworks
 };
 
 export default connect(

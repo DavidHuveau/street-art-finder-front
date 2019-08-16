@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import artworksByCity from "./artworksByCityReducer";
+import artworks from "./artworksReducer";
 
 const rootReducer = combineReducers({
-  artworksByCity
+  artworks
 });
 
 export default rootReducer;
