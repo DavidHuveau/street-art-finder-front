@@ -3,10 +3,15 @@ import "./ArtworksExplore.css";
 import Navigation from "../Navigation/Navigation";
 import ArtworksMap from "../../containers/ArtworksMap/ArtworksMap";
 import SearchArtworks from "../../containers/SearchArtworks/SearchArtworks";
+import { connect } from "react-redux";
+import { fetchArtworks } from "../../actions/ArtworksActionCreators";
 
-const ArtworksExplore = () => {
+const ArtworksExplore = (props) => {
   const getData = cityCriteria => {
+    const { fetchArtworks } = props;
     console.log(cityCriteria);
+    debugger
+    fetchArtworks(cityCriteria);
   };
 
   return (
@@ -27,4 +32,11 @@ const ArtworksExplore = () => {
   );
 };
 
-export default ArtworksExplore;
+const mapDispatchToProps = {
+  fetchArtworks: fetchArtworks
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ArtworksExplore);

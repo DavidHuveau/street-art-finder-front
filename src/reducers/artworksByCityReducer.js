@@ -7,6 +7,7 @@ const initialState = {
 };
 
 const artworksByCity = (state = initialState, action) => {
+  debugger
   switch (action.type) {
     case ActionTypes.RECEIVE_ARTWORKS_REQUEST:
       return {

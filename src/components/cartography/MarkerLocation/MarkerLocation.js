@@ -36,3 +36,15 @@ export default props => {
     </Marker>
   );
 };
+
+// SearchArtworks.propTypes = {
+//   onSearch: PropTypes.func.isRequired
+// };
+
+// SearchArtworks.defaultProps = {
+//   onSearch: () => {}
+// };
+
+// key={i}
+// mark={artworkInfos}
+// showArtworkInfosPane={() => showArtworkInfosPane(artworkInfos)}
