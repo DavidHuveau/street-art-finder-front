@@ -29,11 +29,12 @@ class ArtworksMap extends Component {
 
   render() {
     const { isArtworkInfosPaneOpen, selectedArtwork } = this.state;
-    const { artworks } = this.props;
+    const { artworks, startPosition } = this.props;
 
     return (
       <div>
         <MapWithLeaflet
+          startPosition={startPosition}
           artworks={artworks}
           showArtworkInfosPane={this.showArtworkInfosPane}
         />
@@ -51,7 +52,8 @@ const mapStateToProps = state => {
   const { artworks } = state;
   return {
     artworks: artworks.items,
-    isFetching: artworks.isFetching
+    isFetching: artworks.isFetching,
+    startPosition: artworks.startPosition
   };
 };
 

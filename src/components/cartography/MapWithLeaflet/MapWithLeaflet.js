@@ -5,16 +5,17 @@ import "react-leaflet-markercluster/dist/styles.min.css";
 import { Map, TileLayer, Circle } from "react-leaflet";
 import MarkerLocation from "../MarkerLocation/MarkerLocation";
 import MarkerClusterGroup from "../MarkerClusterGroup/MarkerClusterGroup";
-// import dataWithGeo from "../../../constants/data-with-geo";
 
-const START_POSITION = [49.257786, 4.031926];
+const START_POSITION = [49.257786, 4.031926]; // Reims, France
 const ZOOM = 13;
 
 export default props => {
-  const { showArtworkInfosPane, artworks } = props;
+  const { showArtworkInfosPane, artworks, startPosition } = props;
+  let centerPosition =
+    startPosition.length === 0 ? START_POSITION : startPosition;
 
   return (
-    <Map className="MyMap" center={START_POSITION} zoom={ZOOM} maxZoom={20}>
+    <Map className="MyMap" center={centerPosition} zoom={ZOOM} maxZoom={20}>
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -29,7 +30,7 @@ export default props => {
         ))}
       </MarkerClusterGroup>
       <Circle
-        center={START_POSITION}
+        center={centerPosition}
         fillColor="red"
         bubblingMouseEvents={false}
         radius={200}
