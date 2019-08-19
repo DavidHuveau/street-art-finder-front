@@ -27,7 +27,8 @@ class ArtworkInfosPane extends Component {
       city,
       country,
       createdAt,
-      description
+      description,
+      photoFileName
       // isActivated
     } = selectedArtwork;
 
@@ -47,7 +48,7 @@ class ArtworkInfosPane extends Component {
           <div
             id="Infos-pic"
             style={{
-              backgroundImage: "url(https://placem.at/places)"
+              backgroundImage: `url(http://localhost:8080/api/v1/public/artworks/${photoFileName})`
             }}
           />
           <div className="box">

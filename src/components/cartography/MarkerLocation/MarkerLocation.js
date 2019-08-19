@@ -6,7 +6,6 @@ import icon from "./icon.png";
 import { Button } from "react-bootstrap";
 
 // const THUMBNAIL_WIDTH = 200;
-// const THUMBNAIL_HEIGHT = 200;
 
 const myIcon = L.icon({
   iconUrl: icon,
@@ -22,13 +21,10 @@ export default props => {
   return (
     <Marker position={position.coordinates} icon={myIcon}>
       <Popup>
-        {/* <b>{_id}</b>
-        <div>{`[${position.coordinates[0]},${position.coordinates[1]}]`}</div>
-        <div>{photoFileName}</div> */}
         <img
-          src="https://placem.at/places?w=100&h=100&random=1"
+          src={`http://localhost:8080/api/v1/public/thumbnails/${photoFileName}`}
           alt={photoFileName}
-          width="100px"
+          width="200px"
         />
         <br />
         <Button onClick={showArtworkInfosPane}>Show</Button>

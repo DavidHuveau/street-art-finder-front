@@ -7,7 +7,7 @@ import MarkerLocation from "../MarkerLocation/MarkerLocation";
 import MarkerClusterGroup from "../MarkerClusterGroup/MarkerClusterGroup";
 
 const START_POSITION = [49.257786, 4.031926]; // Reims, France
-const ZOOM = 13;
+const ZOOM = 12;
 
 export default props => {
   const { showArtworkInfosPane, artworks, startPosition } = props;
