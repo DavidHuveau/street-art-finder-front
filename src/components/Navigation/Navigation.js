@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navigation.css";
 import { Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
@@ -8,14 +9,16 @@ const Navigation = () => {
       <Nav
         className="justify-content-center"
         variant="pills"
-        defaultActiveKey="/home"
-        onSelect={selectedKey => alert(`selected ${selectedKey}`)}
+        defaultActiveKey="/"
+        // onSelect={selectedKey => alert(`selected ${selectedKey}`)}
       >
         <Nav.Item bsPrefix="Nav-item">
-          <Nav.Link href="/home">Explore</Nav.Link>
+          {/* <Nav.Link href="/">Explore</Nav.Link> */}
+          <NavLink exact to="/">Explore</NavLink>
         </Nav.Item>
         <Nav.Item bsPrefix="Nav-item">
-          <Nav.Link eventKey="suggest">Suggest</Nav.Link>
+          {/* <Nav.Link eventKey="suggest">Suggest</Nav.Link> */}
+          <NavLink to="/suggest">Suggest</NavLink>
         </Nav.Item>
       </Nav>
     </div>
