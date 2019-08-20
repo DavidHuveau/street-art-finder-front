@@ -1,7 +1,9 @@
 #Nav-wrapper {
+  height: 100%;
   /* border: 1px solid blue; */
+  display: flex;
 }
 
-.Nav-item {
-  margin: 10px;
+.Nav-link {
+  margin: auto;
 }
