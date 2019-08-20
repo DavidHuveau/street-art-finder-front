@@ -2,9 +2,9 @@ import React from "react";
 import "./App.css";
 import { Provider } from "react-redux";
 import configureStore from "./store/configureStore";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import ArtworksExplore from "./components/ArtworksExplore/ArtworksExplore";
-import ArtworkSuggest from "./components/ArtworkSuggest/ArtworkSuggest";
+import { BrowserRouter, Route } from "react-router-dom";
+import ArtworksExplore from "./containers/ArtworksExplore/ArtworksExplore";
+import ArtworkSuggest from "./containers/ArtworkSuggest/ArtworkSuggest";
 
 const store = configureStore();
 

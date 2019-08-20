@@ -1,8 +1,8 @@
 import React from "react";
 import "./ArtworksExplore.css";
-import Navigation from "../Navigation/Navigation";
-import ArtworksMap from "../../containers/ArtworksMap/ArtworksMap";
-import SearchArtworks from "../../containers/SearchArtworks/SearchArtworks";
+import Navigation from "../../components/Navigation/Navigation";
+import ArtworksMap from "../ArtworksMap/ArtworksMap";
+import SearchArtworks from "../../components/SearchArtworks/SearchArtworks";
 import { connect } from "react-redux";
 import { fetchArtworks } from "../../actions/ArtworksActionCreators";
 
