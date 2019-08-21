@@ -48,6 +48,6 @@ class ArtworkSuggest extends Component {
       </div>
     );
   }
-};
+}
 
 export default ArtworkSuggest;
