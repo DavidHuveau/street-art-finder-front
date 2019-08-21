@@ -53,7 +53,7 @@ class ArtworkInfosPane extends Component {
           />
           <div className="box">
             {this.renderDateInfo(createdAt)}
-            <div id="Infos-adress" className="main-color">
+            <div id="Infos-address" className="main-color">
               {`${adressStreet}, ${zipCode}, ${city}`}
               {/* {`${adressStreet}, ${zipCode}, ${city}, ${status}`} */}
             </div>
