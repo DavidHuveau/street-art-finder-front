@@ -8,6 +8,7 @@ class ArtworkSuggestForm extends Component {
 
     this.onChangeValue = this.onChangeValue.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.fileChangedHandler = this.fileChangedHandler.bind(this);
 
     this.state = {
       userName: "Lisa",
@@ -17,7 +18,7 @@ class ArtworkSuggestForm extends Component {
       description: "desc",
       country: "5c87d82de78b4e40b133c55b",
       countryCode: "FR",
-      myFile: ""
+      selectedFile: ""
     };
   }
 
@@ -28,20 +29,52 @@ class ArtworkSuggestForm extends Component {
     });
   }
 
-  onSubmit(e) {
-    e.preventDefault();
-    console.log("submit");
+  fileChangedHandler(e) {
+    this.setState({
+      myFile: e.target.files[0]
+    });
   }
 
-  render() {
+  onSubmit(e) {
+    e.preventDefault();
+    // document.querySelector
+
     const {
       userName,
       adressStreet,
       zipCode,
       city,
       description,
-      myFile
+      selectedFile
     } = this.state;
+
+    const formData = new FormData();
+    formData.append("userName", userName);
+    formData.append("adressStreet", adressStreet);
+    formData.append("zipCode", zipCode);
+    formData.append("city", city);
+    formData.append("description", description);
+    formData.append("myFile", selectedFile, selectedFile.name);
+
+    // formData.append(
+    //   "avatar",
+    //   this.state.selectedFile,
+    //   this.state.selectedFile.name
+    // );
+    // axios
+    // .post(MakeCompletedUrl(`trainee/uploadphoto/${id}`), formData)
+    // .then(res =>
+    //   this.setState(prevState => ({
+    //     data: {
+    //       ...prevState.data,
+    //       pictures: res.data.pictures
+    //     }
+    //   }))
+    // );
+  }
+
+  render() {
+    const { userName, adressStreet, zipCode, city, description } = this.state;
 
     return (
       <div>
@@ -52,7 +85,11 @@ class ArtworkSuggestForm extends Component {
             on this map!
           </p>
         </div>
-        <Form onSubmit={this.onSubmit}>
+        <Form
+          methode="POST"
+          onSubmit={this.onSubmit}
+          encType="multipart/form-data"
+        >
           <Form.Group controlId="formGroupName" className="box">
             <Form.Label>Name</Form.Label>
             <Form.Text className="text-muted">Your name.</Form.Text>
@@ -62,6 +99,7 @@ class ArtworkSuggestForm extends Component {
               value={userName}
               onChange={this.onChangeValue}
               name="userName"
+              required
             />
           </Form.Group>
           <div className="box">
@@ -76,6 +114,7 @@ class ArtworkSuggestForm extends Component {
                 value={adressStreet}
                 onChange={this.onChangeValue}
                 name="adressStreet"
+                required
               />
             </Form.Group>
             <Form.Row>
@@ -86,6 +125,7 @@ class ArtworkSuggestForm extends Component {
                   value={zipCode}
                   onChange={this.onChangeValue}
                   name="zipCode"
+                  required
                 />
               </Form.Group>
               <Form.Group controlId="formGroupCity">
@@ -95,6 +135,7 @@ class ArtworkSuggestForm extends Component {
                   value={city}
                   onChange={this.onChangeValue}
                   name="city"
+                  required
                 />
               </Form.Group>
             </Form.Row>
@@ -111,6 +152,7 @@ class ArtworkSuggestForm extends Component {
               value={description}
               onChange={this.onChangeValue}
               name="description"
+              required
             />
           </Form.Group>
           <Form.Group controlId="formGroupImage" className="box">
@@ -119,10 +161,9 @@ class ArtworkSuggestForm extends Component {
             <input
               type="file"
               accept="image/*"
-              required=""
-              value={myFile}
-              onChange={this.onChangeValue}
+              onChange={this.fileChangedHandler}
               name="myFile"
+              required
             />
           </Form.Group>
           <div className="box">
@@ -137,10 +178,3 @@ class ArtworkSuggestForm extends Component {
 }
 
 export default ArtworkSuggestForm;
-
-{
-  /* <form method="post" encType="multipart/form-data" action="/upload">
-<input type="file" name="uploadFile" />
-<input type="submit" className="btn btn-primary" value="upload" />
-</form> */
-}
