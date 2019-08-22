@@ -11,7 +11,7 @@ class ArtworkSuggestForm extends Component {
     this.fileChangedHandler = this.fileChangedHandler.bind(this);
 
     this.state = {
-      userName: "Lisa",
+      userName: "Fred",
       adressStreet: "12 Avenue Brébant",
       zipCode: "51100",
       city: "Reims",
@@ -31,7 +31,7 @@ class ArtworkSuggestForm extends Component {
 
   fileChangedHandler(e) {
     this.setState({
-      myFile: e.target.files[0]
+      selectedFile: e.target.files[0]
     });
   }
 
@@ -45,6 +45,8 @@ class ArtworkSuggestForm extends Component {
       zipCode,
       city,
       description,
+      country,
+      countryCode,
       selectedFile
     } = this.state;
 
@@ -54,23 +56,12 @@ class ArtworkSuggestForm extends Component {
     formData.append("zipCode", zipCode);
     formData.append("city", city);
     formData.append("description", description);
-    formData.append("myFile", selectedFile, selectedFile.name);
+    formData.append("country", country);
+    formData.append("countryCode", countryCode);
+    formData.append("myFile", selectedFile);
 
-    // formData.append(
-    //   "avatar",
-    //   this.state.selectedFile,
-    //   this.state.selectedFile.name
-    // );
-    // axios
-    // .post(MakeCompletedUrl(`trainee/uploadphoto/${id}`), formData)
-    // .then(res =>
-    //   this.setState(prevState => ({
-    //     data: {
-    //       ...prevState.data,
-    //       pictures: res.data.pictures
-    //     }
-    //   }))
-    // );
+    const { onSubmit } = this.props;
+    onSubmit(formData);
   }
 
   render() {
