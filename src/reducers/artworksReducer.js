@@ -2,6 +2,7 @@ import ActionTypes from "../actions/ActionTypes";
 
 const initialState = {
   isFetching: false,
+  isUploading: false,
   startPosition: [],
   items: [],
   error: null
@@ -31,6 +32,24 @@ const artworks = (state = initialState, action) => {
         isFetching: false,
         items: [],
         startPosition: [],
+        error: action.error
+      };
+    case ActionTypes.CREATE_ARTWORK_REQUEST:
+      return {
+        ...state,
+        isUploading: true,
+        error: null
+      };
+    case ActionTypes.CREATE_ARTWORK_SUCCESS:
+      return {
+        ...state,
+        isUploading: false,
+        error: null
+      };
+    case ActionTypes.CREATE_ARTWORK_FAILURE:
+      return {
+        ...state,
+        isUploading: false,
         error: action.error
       };
     default:

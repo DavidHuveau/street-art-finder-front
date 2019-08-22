@@ -4,7 +4,7 @@ import "react-sliding-pane/dist/react-sliding-pane.css";
 import SlidingPane from "react-sliding-pane";
 import Modal from "react-modal";
 import { connect } from "react-redux";
-import { createArtwork } from "../../actions/ArtworksActionCreators";
+import { createArtwork } from "../../actions/ArtworkActionCreators";
 
 class ArtworkSuggest extends Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class ArtworkSuggest extends Component {
 
   render() {
     const { isArtworkSuggestPaneOpen } = this.state;
-    const {createArtwork} = this.props;
+    const { createArtwork } = this.props;
 
     return (
       <div ref={ref => (this.el = ref)}>
@@ -46,7 +46,7 @@ class ArtworkSuggest extends Component {
           width="100%"
           onRequestClose={this.onRequestClose}
         >
-          <ArtworkSuggestForm {...this.props} onSubmit={createArtwork}/>
+          <ArtworkSuggestForm {...this.props} onSubmit={createArtwork} />
         </SlidingPane>
       </div>
     );

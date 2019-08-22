@@ -15,11 +15,21 @@ class ArtworkSuggestForm extends Component {
       adressStreet: "12 Avenue Brébant",
       zipCode: "51100",
       city: "Reims",
-      description: "desc",
+      description: "description",
       country: "5c87d82de78b4e40b133c55b",
       countryCode: "FR",
       selectedFile: ""
     };
+    // this.state = {
+    //   userName: "",
+    //   adressStreet: "",
+    //   zipCode: "",
+    //   city: "",
+    //   description: "",
+    //   country: "5c87d82de78b4e40b133c55b",
+    //   countryCode: "FR",
+    //   selectedFile: ""
+    // };
   }
 
   onChangeValue(e) {
@@ -76,11 +86,7 @@ class ArtworkSuggestForm extends Component {
             on this map!
           </p>
         </div>
-        <Form
-          methode="POST"
-          onSubmit={this.onSubmit}
-          encType="multipart/form-data"
-        >
+        <Form methode="POST" onSubmit={this.onSubmit}>
           <Form.Group controlId="formGroupName" className="box">
             <Form.Label>Name</Form.Label>
             <Form.Text className="text-muted">Your name.</Form.Text>
