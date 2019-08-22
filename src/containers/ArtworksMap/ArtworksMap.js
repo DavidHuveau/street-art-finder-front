@@ -7,8 +7,9 @@ class ArtworksMap extends Component {
   constructor(props) {
     super(props);
 
-    this.onRequestClose = this.onRequestClose.bind(this);
-    this.showArtworkInfosPane = this.showArtworkInfosPane.bind(this);
+    ["onRequestClose", "showArtworkInfosPane"].forEach(
+      fn => (this[fn] = this[fn].bind(this))
+    );
 
     this.state = {
       selectedArtwork: null,

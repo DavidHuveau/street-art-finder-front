@@ -7,9 +7,9 @@ class SearchArtworks extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangeCriteria = this.onChangeCriteria.bind(this);
-    this.onClickSearch = this.onClickSearch.bind(this);
-    this.onClickClear = this.onClickClear.bind(this);
+    ["onChangeCriteria", "onClickSearch", "onClickClear"].forEach(
+      fn => (this[fn] = this[fn].bind(this))
+    );
 
     this.state = {
       valueCriteria: "" // only City in first time

@@ -10,7 +10,7 @@ class ArtworkSuggest extends Component {
   constructor(props) {
     super(props);
 
-    this.onRequestClose = this.onRequestClose.bind(this);
+    ["onRequestClose"].forEach(fn => (this[fn] = this[fn].bind(this)));
 
     this.state = {
       isArtworkSuggestPaneOpen: true

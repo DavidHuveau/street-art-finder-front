@@ -6,9 +6,9 @@ class ArtworkSuggestForm extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangeValue = this.onChangeValue.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-    this.fileChangedHandler = this.fileChangedHandler.bind(this);
+    ["onChangeValue", "onSubmit", "fileChangedHandler"].forEach(
+      fn => (this[fn] = this[fn].bind(this))
+    );
 
     this.state = {
       userName: "Fred",
