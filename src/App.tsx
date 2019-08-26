@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ArtworksExplore from "./containers/ArtworksExplore/ArtworksExplore";
 import ArtworkSuggest from "./containers/ArtworkSuggest/ArtworkSuggest";
 import Page404 from "./components/Page404/Page404";
-import ArtworksValidate from "./containers/ArtworksValidate/ArtworksValidate";
+import ArtworksValidate from "./components/ArtworksValidate/ArtworksValidate";
 
 const store = configureStore();
 

@@ -1,5 +1,6 @@
 import React from "react";
 import "./ArtworksValidate.css";
+import ArtworksProposalsList from "../../containers/ArtworksProposalsList/ArtworksProposalsList";
 
 const ArtworksValidate = props => {
   return (
@@ -8,7 +9,9 @@ const ArtworksValidate = props => {
         <h1 className="main-color">Street Art Finder</h1>
         <h2>Proposals validation </h2>
       </header>
-      <main>Main</main>
+      <main>
+        <ArtworksProposalsList />
+      </main>
       <footer>Go Home</footer>
     </div>
   );
