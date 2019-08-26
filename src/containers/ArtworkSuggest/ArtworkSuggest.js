@@ -5,7 +5,6 @@ import SlidingPane from "react-sliding-pane";
 import Modal from "react-modal";
 import { connect } from "react-redux";
 import { createArtwork } from "../../actions/ArtworkActionCreators";
-import artwork from "../../reducers/artworkReducer";
 
 class ArtworkSuggest extends Component {
   constructor(props) {

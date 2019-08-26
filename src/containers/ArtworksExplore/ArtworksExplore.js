@@ -14,19 +14,17 @@ const ArtworksExplore = props => {
   };
 
   return (
-    <div>
-      <div id="Exp-wrapper">
-        <header>
-          <h1 className="main-color">Street Art Finder</h1>
-          <SearchArtworks onSearch={getData} />
-        </header>
-        <main>
-          <ArtworksMap />
-        </main>
-        <footer>
-          <Navigation />
-        </footer>
-      </div>
+    <div id="Exp-wrapper">
+      <header>
+        <h1 className="main-color">Street Art Finder</h1>
+        <SearchArtworks onSearch={getData} />
+      </header>
+      <main>
+        <ArtworksMap />
+      </main>
+      <footer>
+        <Navigation />
+      </footer>
     </div>
   );
 };
