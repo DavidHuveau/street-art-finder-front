@@ -1,0 +1,14 @@
+.form-row {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+.input-city {
+  margin-left: 16px;
+}
+
+@media screen and (max-width: 425px) {
+  .input-city {
+    margin-left: 0px;
+  }
+}

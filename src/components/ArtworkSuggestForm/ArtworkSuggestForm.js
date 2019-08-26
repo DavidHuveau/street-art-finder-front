@@ -10,26 +10,26 @@ class ArtworkSuggestForm extends Component {
       fn => (this[fn] = this[fn].bind(this))
     );
 
-    this.state = {
-      userName: "Fred",
-      adressStreet: "12 Avenue Brébant",
-      zipCode: "51100",
-      city: "Reims",
-      description: "description",
-      country: "5c87d82de78b4e40b133c55b",
-      countryCode: "FR",
-      selectedFile: ""
-    };
     // this.state = {
-    //   userName: "",
-    //   adressStreet: "",
-    //   zipCode: "",
-    //   city: "",
-    //   description: "",
+    //   userName: "Fred",
+    //   adressStreet: "12 Avenue Brébant",
+    //   zipCode: "51100",
+    //   city: "Reims",
+    //   description: "description",
     //   country: "5c87d82de78b4e40b133c55b",
     //   countryCode: "FR",
     //   selectedFile: ""
     // };
+    this.state = {
+      userName: "",
+      adressStreet: "",
+      zipCode: "",
+      city: "",
+      description: "",
+      country: "5c87d82de78b4e40b133c55b",
+      countryCode: "FR",
+      selectedFile: ""
+    };
   }
 
   componentDidUpdate(prevProps) {
@@ -127,7 +127,7 @@ class ArtworkSuggestForm extends Component {
                 required
               />
             </Form.Group>
-            <Form.Group controlId="formGroupCity">
+            <Form.Group controlId="formGroupCity" className="input-city">
               <Form.Control
                 type="text"
                 placeholder="Enter a city..."
@@ -183,7 +183,7 @@ class ArtworkSuggestForm extends Component {
     );
 
     return (
-      <div className="box">
+      <div className="box float-right">
         <Button variant="primary" type="submit" disabled={isUploading}>
           {contentButton}
         </Button>
