@@ -1,6 +1,7 @@
 import React from "react";
 import "./ArtworksValidate.css";
 import ArtworksProposalsList from "../../containers/ArtworksProposalsList/ArtworksProposalsList";
+import Navigation from "../../components/Navigation/Navigation";
 
 const ArtworksValidate = props => {
   return (
@@ -12,7 +13,9 @@ const ArtworksValidate = props => {
       <main>
         <ArtworksProposalsList />
       </main>
-      <footer>Go Home</footer>
+      <footer>
+        <Navigation path="/" caption="Go Home" />
+      </footer>
     </div>
   );
 };

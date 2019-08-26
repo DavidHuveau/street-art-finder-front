@@ -6,8 +6,8 @@ import ArtworkProposalCard from "../../components/ArtworkProposalCard/ArtworkPro
 const ArtworksProposalsList = props => {
   return (
     <Fragment>
-      <small className="text-muted ml-2">333 proposal(s) to valide</small>
       <CardDeck className="proposals-list-container">
+        <small className="text-muted ml-2">333 proposal(s) to valide</small>
         <ArtworkProposalCard />
         <ArtworkProposalCard />
         {/* <ArtworkProposalCard /> */}
