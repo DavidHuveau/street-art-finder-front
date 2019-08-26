@@ -23,7 +23,7 @@ const ArtworksExplore = props => {
         <ArtworksMap />
       </main>
       <footer>
-        <Navigation />
+        <Navigation path="/suggest" caption="Suggest" />
       </footer>
     </div>
   );
