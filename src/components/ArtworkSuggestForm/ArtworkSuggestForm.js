@@ -32,6 +32,16 @@ class ArtworkSuggestForm extends Component {
     // };
   }
 
+  componentDidUpdate(prevProps) {
+    const { error, isUploading, onRequestClose } = this.props;
+    const { isUploading: prevIsUploading } = prevProps;
+    const isEndOfCallApiWithoutError = !isUploading && prevIsUploading;
+
+    if (isEndOfCallApiWithoutError && !error) {
+      onRequestClose();
+    }
+  }
+
   onChangeValue(e) {
     const { name, value } = e.target;
     this.setState({
@@ -165,13 +175,7 @@ class ArtworkSuggestForm extends Component {
 
     const contentButton = isUploading ? (
       <Fragment>
-        <Spinner
-          as="span"
-          animation="border"
-          size="sm"
-          role="status"
-          key="1"
-        />
+        <Spinner as="span" animation="border" size="sm" role="status" key="1" />
         <span key="2">Uploading...</span>
       </Fragment>
     ) : (

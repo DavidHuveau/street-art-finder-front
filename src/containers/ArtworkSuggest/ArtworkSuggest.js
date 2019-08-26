@@ -51,6 +51,7 @@ class ArtworkSuggest extends Component {
             {...this.props}
             onSubmit={createArtwork}
             isUploading={isUploading}
+            onRequestClose={this.onRequestClose}
           />
         </SlidingPane>
       </div>
@@ -66,7 +67,8 @@ const mapStateToProps = state => {
   const { artwork } = state;
 
   return {
-    isUploading: artwork.isUploading
+    isUploading: artwork.isUploading,
+    error: artwork.error
   };
 };
 
