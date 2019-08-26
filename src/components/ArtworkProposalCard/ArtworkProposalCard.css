@@ -1,0 +1,16 @@
+
+/* .card-img-top {
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+} */
+
+.Prop-preview-pic {
+  position: relative;
+}
+
+.Prop-preview-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

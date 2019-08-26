@@ -7,15 +7,15 @@
 #Val-wrapper > header {
   height: 98px;
   text-align: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 #Val-wrapper > footer {
   height: 64px;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 #Val-wrapper > main {
   flex: 1;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }

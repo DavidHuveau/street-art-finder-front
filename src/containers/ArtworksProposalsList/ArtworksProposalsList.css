@@ -2,5 +2,5 @@
   height: calc(100vh - 64px - 98px);
   width: 100%;
   margin: 0 auto;
-  overflow: scroll;
+  overflow-y: auto;
 }

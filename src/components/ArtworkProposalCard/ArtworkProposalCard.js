@@ -1,21 +1,38 @@
 import React from "react";
 import "./ArtworkProposalCard.css";
-import { Card } from "react-bootstrap";
+import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 
 const ArtworkProposalCard = props => {
   return (
     <Card>
-      <Card.Img variant="top" src="holder.js/100px160" />
+      <div className="Prop-preview-pic">
+        <Card.Img
+          variant="top"
+          src="http://localhost:8080/api/v1/public/thumbnails/c1539d7d0dbf889b4b6fd13029827f88.png"
+        />
+        <div className="Prop-preview-buttons">
+          <Button className="float-right ml-2" size="sm" variant="success">
+            Publish
+          </Button>
+          <Button className="float-right" size="sm" variant="danger">
+            No Publish
+          </Button>
+        </div>
+      </div>
       <Card.Body>
-        <Card.Title>Card title</Card.Title>
-        <Card.Text>
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </Card.Text>
+        <Card.Title>26 bis boulevard pasteur, 51100, REIMS</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">France</Card.Subtitle>
+        <Card.Text>Description</Card.Text>
       </Card.Body>
-      <Card.Footer>
-        <small className="text-muted">Last updated 3 mins ago</small>
-      </Card.Footer>
+      <ListGroup className="list-group-flush">
+        <ListGroupItem className="text-muted">
+        <small className="text-muted">Created August 19, 2019</small><br />
+
+          <small>
+            Suggested by <span className="main-color">Toto</span>
+          </small>
+        </ListGroupItem>
+      </ListGroup>
     </Card>
   );
 };
