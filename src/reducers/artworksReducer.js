@@ -34,24 +34,6 @@ const artworks = (state = initialState, action) => {
         startPosition: [],
         error: action.error
       };
-    // case ActionTypes.CREATE_ARTWORK_REQUEST:
-    //   return {
-    //     ...state,
-    //     isUploading: true,
-    //     error: null
-    //   };
-    // case ActionTypes.CREATE_ARTWORK_SUCCESS:
-    //   return {
-    //     ...state,
-    //     isUploading: false,
-    //     error: null
-    //   };
-    // case ActionTypes.CREATE_ARTWORK_FAILURE:
-    //   return {
-    //     ...state,
-    //     isUploading: false,
-    //     error: action.error
-    //   };
     case ActionTypes.RECEIVE_PROPOSALS_REQUEST:
       return {
         ...state,
