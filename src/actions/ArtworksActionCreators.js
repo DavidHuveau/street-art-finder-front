@@ -20,3 +20,31 @@ export const fetchArtworks = city => {
     }
   };
 };
+
+export const fetchProposals = () => {
+  const {
+    RECEIVE_PROPOSALS_REQUEST,
+    RECEIVE_PROPOSALS_SUCCESS,
+    RECEIVE_PROPOSALS_FAILURE
+  } = ActionTypes;
+
+  return {
+    [RSAA]: {
+      endpoint: `http://localhost:8080/api/v1/artworks/`,
+      method: "GET",
+      types: [
+        RECEIVE_PROPOSALS_REQUEST,
+        RECEIVE_PROPOSALS_SUCCESS,
+        RECEIVE_PROPOSALS_FAILURE
+      ]
+    }
+  };
+};
+
+export const emptyProposals = () => {
+  const { EMPTY_PROPOSALS } = ActionTypes;
+
+  return {
+    type: EMPTY_PROPOSALS
+  };
+};

@@ -57,7 +57,7 @@ class ArtworkInfosPane extends Component {
               {`${adressStreet}, ${zipCode}, ${city}`}
               {/* {`${adressStreet}, ${zipCode}, ${city}, ${status}`} */}
             </div>
-            <>{`${country.name}`}</>
+            <>{country.name}</>
           </div>
           <div className="box">
             <h2>

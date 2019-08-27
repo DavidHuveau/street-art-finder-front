@@ -1,21 +1,64 @@
-import React from "react";
+import React, { Component } from "react";
 import "./ArtworksProposalsList.css";
 import { CardDeck } from "react-bootstrap";
 import ArtworkProposalCard from "../../components/ArtworkProposalCard/ArtworkProposalCard";
+import { connect } from "react-redux";
+import {
+  fetchProposals,
+  emptyProposals
+} from "../../actions/ArtworksActionCreators";
 
-const ArtworksProposalsList = props => {
-  return (
-    <div className="proposals-list-container">
-      <small className="text-muted ml-2">333 proposal(s) to valide</small>
-      <CardDeck>
-        <ArtworkProposalCard />
-        <ArtworkProposalCard />
-        {/* <ArtworkProposalCard /> */}
-        {/* <ArtworkProposalCard />
-      <ArtworkProposalCard /> */}
-      </CardDeck>
-    </div>
-  );
+class ArtworksProposalsList extends Component {
+  componentDidMount() {
+    const { fetchProposals } = this.props;
+    fetchProposals();
+  }
+
+  componentDidUpdate() {}
+
+  componentWillUnmount() {
+    const { emptyProposals } = this.props;
+    emptyProposals();
+  }
+
+  render() {
+    const { artworks } = this.props;
+
+    // debugger;
+    return (
+      <div className="proposals-list-container">
+        <small className="text-muted ml-2">
+          {artworks.length || 0} proposal(s) to valide
+        </small>
+        <CardDeck>
+          {artworks.map((artwork, index) => (
+            <ArtworkProposalCard key={index} artwork={artwork} />
+          ))}
+
+          {/* <ArtworkProposalCard />
+          <ArtworkProposalCard /> */}
+          {/* <ArtworkProposalCard />
+        <ArtworkProposalCard /> */}
+        </CardDeck>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  const { artworks } = state;
+  return {
+    artworks: artworks.items,
+    isFetching: artworks.isFetching
+  };
 };
 
-export default ArtworksProposalsList;
+const mapDispatchToProps = {
+  fetchProposals,
+  emptyProposals
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ArtworksProposalsList);

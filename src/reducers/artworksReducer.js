@@ -34,23 +34,52 @@ const artworks = (state = initialState, action) => {
         startPosition: [],
         error: action.error
       };
-    case ActionTypes.CREATE_ARTWORK_REQUEST:
+    // case ActionTypes.CREATE_ARTWORK_REQUEST:
+    //   return {
+    //     ...state,
+    //     isUploading: true,
+    //     error: null
+    //   };
+    // case ActionTypes.CREATE_ARTWORK_SUCCESS:
+    //   return {
+    //     ...state,
+    //     isUploading: false,
+    //     error: null
+    //   };
+    // case ActionTypes.CREATE_ARTWORK_FAILURE:
+    //   return {
+    //     ...state,
+    //     isUploading: false,
+    //     error: action.error
+    //   };
+    case ActionTypes.RECEIVE_PROPOSALS_REQUEST:
       return {
         ...state,
-        isUploading: true,
+        isFetching: true,
+        items: [],
+        startPosition: [],
         error: null
       };
-    case ActionTypes.CREATE_ARTWORK_SUCCESS:
+    case ActionTypes.RECEIVE_PROPOSALS_SUCCESS:
       return {
         ...state,
-        isUploading: false,
+        isFetching: false,
+        items: action.payload.artworks,
+        startPosition: [],
         error: null
       };
-    case ActionTypes.CREATE_ARTWORK_FAILURE:
+    case ActionTypes.RECEIVE_PROPOSALS_FAILURE:
       return {
         ...state,
-        isUploading: false,
+        isFetching: false,
+        items: [],
+        startPosition: [],
         error: action.error
+      };
+    case ActionTypes.EMPTY_PROPOSALS:
+      return {
+        ...state,
+        ...initialState
       };
     default:
       return state;
