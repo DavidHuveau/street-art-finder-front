@@ -7,6 +7,10 @@ import {
   fetchProposals,
   emptyProposals
 } from "../../actions/ArtworksActionCreators";
+import {
+  publishProposal,
+  noPublishProposal
+} from "../../actions/ArtworkActionCreators";
 
 class ArtworksProposalsList extends Component {
   componentDidMount() {
@@ -22,7 +26,7 @@ class ArtworksProposalsList extends Component {
   }
 
   render() {
-    const { artworks } = this.props;
+    const { artworks, publishProposal, noPublishProposal } = this.props;
 
     // debugger;
     return (
@@ -32,7 +36,12 @@ class ArtworksProposalsList extends Component {
         </small>
         <CardDeck>
           {artworks.map((artwork, index) => (
-            <ArtworkProposalCard key={index} artwork={artwork} />
+            <ArtworkProposalCard
+              key={index}
+              artwork={artwork}
+              publishProposal={publishProposal}
+              noPublishProposal={noPublishProposal}
+            />
           ))}
 
           {/* <ArtworkProposalCard />
@@ -55,7 +64,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   fetchProposals,
-  emptyProposals
+  emptyProposals,
+  publishProposal,
+  noPublishProposal
 };
 
 export default connect(

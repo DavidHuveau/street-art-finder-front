@@ -30,7 +30,8 @@ export const fetchProposals = () => {
 
   return {
     [RSAA]: {
-      endpoint: `http://localhost:8080/api/v1/artworks/`,
+      // endpoint: `http://localhost:8080/api/v1/artworks/`,
+      endpoint: `http://localhost:8080/api/v1/proposals/`,
       method: "GET",
       types: [
         RECEIVE_PROPOSALS_REQUEST,

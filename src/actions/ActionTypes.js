@@ -18,4 +18,14 @@ export default keyMirror({
 
   // empty proposals
   EMPTY_PROPOSALS: null,
+
+  // publish a proposal
+  PUBLISH_PROPOSAL_REQUEST: null,
+  PUBLISH_PROPOSAL_SUCCESS: null,
+  PUBLISH_PROPOSAL_FAILURE: null,
+
+  // no publish a proposal
+  NO_PUBLISH_PROPOSAL_REQUEST: null,
+  NO_PUBLISH_PROPOSAL_SUCCESS: null,
+  NO_PUBLISH_PROPOSAL_FAILURE: null
 });

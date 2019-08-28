@@ -63,6 +63,13 @@ const artworks = (state = initialState, action) => {
         ...state,
         ...initialState
       };
+    case ActionTypes.PUBLISH_PROPOSAL_SUCCESS:
+    case ActionTypes.NO_PUBLISH_PROPOSAL_SUCCESS:
+      return {
+        ...state,
+        items: state.items.filter(el => el._id !== action.payload.id)
+      };
+
     default:
       return state;
   }

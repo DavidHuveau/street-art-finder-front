@@ -3,8 +3,13 @@ import "./ArtworkProposalCard.css";
 import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 import moment from "moment";
 
-const ArtworkProposalCard = ({ artwork }) => {
+const ArtworkProposalCard = ({
+  artwork,
+  publishProposal,
+  noPublishProposal
+}) => {
   const {
+    _id,
     userName,
     adressStreet,
     zipCode,
@@ -29,10 +34,20 @@ const ArtworkProposalCard = ({ artwork }) => {
           src={`http://localhost:8080/api/v1/public/thumbnails/${photoFileName}`}
         />
         <div className="Prop-preview-buttons">
-          <Button className="float-right ml-2" size="sm" variant="success">
+          <Button
+            className="float-right ml-2"
+            size="sm"
+            variant="success"
+            onClick={() => publishProposal(_id)}
+          >
             Publish
           </Button>
-          <Button className="float-right" size="sm" variant="danger">
+          <Button
+            className="float-right"
+            size="sm"
+            variant="danger"
+            onClick={() => noPublishProposal(_id)}
+          >
             No Publish
           </Button>
         </div>
