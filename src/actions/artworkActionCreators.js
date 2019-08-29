@@ -22,7 +22,7 @@ export const createArtwork = createData => {
   };
 };
 
-export const publishProposal = id => {
+export const publishProposal = (id, token) => {
   const {
     PUBLISH_PROPOSAL_REQUEST,
     PUBLISH_PROPOSAL_SUCCESS,
@@ -33,6 +33,10 @@ export const publishProposal = id => {
     [RSAA]: {
       endpoint: `http://localhost:8080/api/v1/proposals/publish/${id}`,
       method: "PUT",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: `Bearer ${token}`
+      },
       types: [
         PUBLISH_PROPOSAL_REQUEST,
         {
@@ -45,7 +49,7 @@ export const publishProposal = id => {
   };
 };
 
-export const noPublishProposal = id => {
+export const noPublishProposal = (id, token) => {
   const {
     NO_PUBLISH_PROPOSAL_REQUEST,
     NO_PUBLISH_PROPOSAL_SUCCESS,
@@ -56,6 +60,10 @@ export const noPublishProposal = id => {
     [RSAA]: {
       endpoint: `http://localhost:8080/api/v1/proposals/noPublish/${id}`,
       method: "PUT",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: `Bearer ${token}`
+      },
       types: [
         NO_PUBLISH_PROPOSAL_REQUEST,
         {
