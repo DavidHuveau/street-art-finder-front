@@ -9,14 +9,14 @@ class SignInForm extends Component {
       fn => (this[fn] = this[fn].bind(this))
     );
 
-    this.state = {
-      login: "toto",
-      password: "1234"
-    };
     // this.state = {
-    //   login: "",
-    //   password: ""
+    //   login: "toto",
+    //   password: "1234"
     // };
+    this.state = {
+      login: "",
+      password: ""
+    };
   }
 
   onChangeValue(e) {

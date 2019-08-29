@@ -28,7 +28,6 @@ class ArtworksProposalsList extends Component {
   render() {
     const { artworks, publishProposal, noPublishProposal, token } = this.props;
 
-    // debugger;
     return (
       <div className="proposals-list-container">
         <small className="text-muted ml-2">
@@ -39,8 +38,8 @@ class ArtworksProposalsList extends Component {
             <ArtworkProposalCard
               key={index}
               artwork={artwork}
-              publishProposal={id=> publishProposal(id, token)}
-              noPublishProposal={id=>noPublishProposal(id, token)}
+              publishProposal={id => publishProposal(id, token)}
+              noPublishProposal={id => noPublishProposal(id, token)}
             />
           ))}
 

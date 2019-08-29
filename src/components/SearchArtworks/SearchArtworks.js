@@ -26,7 +26,6 @@ class SearchArtworks extends Component {
     const { valueCriteria } = this.state;
     const { onSearch } = this.props;
 
-    // console.log(valueCriteria);
     onSearch(valueCriteria);
   }
 
