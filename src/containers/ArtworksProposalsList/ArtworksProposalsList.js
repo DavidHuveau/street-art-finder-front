@@ -14,8 +14,8 @@ import {
 
 class ArtworksProposalsList extends Component {
   componentDidMount() {
-    const { fetchProposals } = this.props;
-    fetchProposals();
+    const { fetchProposals, token } = this.props;
+    fetchProposals(token);
   }
 
   componentDidUpdate() {}
@@ -55,10 +55,11 @@ class ArtworksProposalsList extends Component {
 }
 
 const mapStateToProps = state => {
-  const { artworks } = state;
+  const { artworks, auth } = state;
+
   return {
     artworks: artworks.items,
-    isFetching: artworks.isFetching
+    token: auth.token
   };
 };
 

@@ -21,7 +21,7 @@ export const fetchArtworks = city => {
   };
 };
 
-export const fetchProposals = () => {
+export const fetchProposals = token => {
   const {
     RECEIVE_PROPOSALS_REQUEST,
     RECEIVE_PROPOSALS_SUCCESS,
@@ -33,6 +33,10 @@ export const fetchProposals = () => {
       // endpoint: `http://localhost:8080/api/v1/artworks/`,
       endpoint: `http://localhost:8080/api/v1/proposals/`,
       method: "GET",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: `Bearer ${token}`
+      },
       types: [
         RECEIVE_PROPOSALS_REQUEST,
         RECEIVE_PROPOSALS_SUCCESS,
