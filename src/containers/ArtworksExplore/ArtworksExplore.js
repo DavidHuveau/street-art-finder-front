@@ -4,7 +4,7 @@ import Navigation from "../../components/Navigation/Navigation";
 import ArtworksMap from "../ArtworksMap/ArtworksMap";
 import SearchArtworks from "../../components/SearchArtworks/SearchArtworks";
 import { connect } from "react-redux";
-import { fetchArtworks } from "../../actions/ArtworksActionCreators";
+import { fetchArtworks } from "../../actions/artworksActionCreators";
 
 const ArtworksExplore = props => {
   const getData = cityCriteria => {

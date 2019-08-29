@@ -27,5 +27,10 @@ export default keyMirror({
   // no publish a proposal
   NO_PUBLISH_PROPOSAL_REQUEST: null,
   NO_PUBLISH_PROPOSAL_SUCCESS: null,
-  NO_PUBLISH_PROPOSAL_FAILURE: null
+  NO_PUBLISH_PROPOSAL_FAILURE: null,
+
+  // get token
+  CREATE_SESSION_REQUEST: null,
+  CREATE_SESSION_SUCCESS: null,
+  CREATE_SESSION_FAILURE: null
 });

@@ -1,4 +1,4 @@
-import ActionTypes from "../actions/ActionTypes";
+import ActionTypes from "./actionTypes";
 import { RSAA } from "redux-api-middleware";
 
 export const fetchArtworks = city => {

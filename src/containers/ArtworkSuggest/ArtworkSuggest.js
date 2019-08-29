@@ -4,7 +4,7 @@ import "react-sliding-pane/dist/react-sliding-pane.css";
 import SlidingPane from "react-sliding-pane";
 import Modal from "react-modal";
 import { connect } from "react-redux";
-import { createArtwork } from "../../actions/ArtworkActionCreators";
+import { createArtwork } from "../../actions/artworkActionCreators";
 
 class ArtworkSuggest extends Component {
   constructor(props) {

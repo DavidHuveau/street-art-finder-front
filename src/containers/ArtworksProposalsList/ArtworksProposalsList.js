@@ -6,11 +6,11 @@ import { connect } from "react-redux";
 import {
   fetchProposals,
   emptyProposals
-} from "../../actions/ArtworksActionCreators";
+} from "../../actions/artworksActionCreators";
 import {
   publishProposal,
   noPublishProposal
-} from "../../actions/ArtworkActionCreators";
+} from "../../actions/artworkActionCreators";
 
 class ArtworksProposalsList extends Component {
   componentDidMount() {

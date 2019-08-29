@@ -7,7 +7,7 @@ import ArtworksExplore from "./containers/ArtworksExplore/ArtworksExplore";
 import ArtworkSuggest from "./containers/ArtworkSuggest/ArtworkSuggest";
 import Page404 from "./components/Page404/Page404";
 import ArtworksValidate from "./components/ArtworksValidate/ArtworksValidate";
-import SignIn from "./components/Signin/Signin";
+import ProposalsSignIn from "./containers/ProposalsSignIn/ProposalsSignIn";
 
 const store = configureStore();
 
@@ -19,7 +19,7 @@ const App: React.FC = () => {
           <Route path="/" exact component={ArtworksExplore} />
           <Route path="/suggest" component={ArtworkSuggest} />
           <Route path="/validate" component={ArtworksValidate} />
-          <Route path="/signin" component={SignIn} />
+          <Route path="/signin" component={ProposalsSignIn} />
           <Route component={Page404} />
         </Switch>
       </div>

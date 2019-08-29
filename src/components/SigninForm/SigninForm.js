@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 
-class SignIn extends Component {
+class SignInForm extends Component {
   constructor() {
     super();
 
@@ -28,12 +28,11 @@ class SignIn extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    // document.querySelector
 
     const { login, password } = this.state;
+    const { onSubmit } = this.props;
 
-    // const { onSubmit } = this.props;
-    // onSubmit(formData);
+    onSubmit({ login: login, password: password });
   }
 
   render() {
@@ -41,7 +40,11 @@ class SignIn extends Component {
 
     return (
       <div>
-        <Form style={{ width: "80%", margin: "auto" }}>
+        <Form
+          methode="POST"
+          onSubmit={this.onSubmit}
+          style={{ width: "80%", margin: "auto" }}
+        >
           <Form.Group controlId="formGroupLogin" className="box">
             <Form.Label>Login</Form.Label>
             <Form.Text className="text-muted">Your login.</Form.Text>
@@ -77,4 +80,4 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn;
+export default SignInForm;

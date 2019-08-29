@@ -1,4 +1,4 @@
-import ActionTypes from "../actions/ActionTypes";
+import ActionTypes from "../actions/actionTypes";
 
 const initialState = {
   isUploading: false,
