@@ -4,9 +4,16 @@ import { connect } from "react-redux";
 import { createSession } from "../../actions/authActionCreator";
 
 class ProposalsSignIn extends Component {
+  componentWillReceiveProps(nextProps) {
+    const { token } = nextProps;
+    if (token) {
+      this.props.history.push("/validate");
+    }
+  }
+
   render() {
     const { createSession } = this.props;
-    return <SignInForm onSubmit={createSession}></SignInForm>;
+    return <SignInForm onSubmit={createSession} />;
   }
 }
 
