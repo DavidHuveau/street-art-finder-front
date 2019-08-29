@@ -2,11 +2,12 @@ import React from "react";
 import "./App.css";
 import { Provider } from "react-redux";
 import configureStore from "./store/configureStore";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import ArtworksExplore from "./containers/ArtworksExplore/ArtworksExplore";
 import ArtworkSuggest from "./containers/ArtworkSuggest/ArtworkSuggest";
 import Page404 from "./components/Page404/Page404";
 import ArtworksValidate from "./components/ArtworksValidate/ArtworksValidate";
+import SignIn from "./components/Signin/Signin";
 
 const store = configureStore();
 
@@ -14,14 +15,13 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <div className="App">
-        <BrowserRouter>
-          <Switch>
-            <Route path="/" exact component={ArtworksExplore} />
-            <Route path="/suggest/" component={ArtworkSuggest} />
-            <Route path="/validate/" component={ArtworksValidate} />
-            <Route component={Page404} />
-          </Switch>
-        </BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={ArtworksExplore} />
+          <Route path="/suggest" component={ArtworkSuggest} />
+          <Route path="/validate" component={ArtworksValidate} />
+          <Route path="/signin" component={SignIn} />
+          <Route component={Page404} />
+        </Switch>
       </div>
     </Provider>
   );
