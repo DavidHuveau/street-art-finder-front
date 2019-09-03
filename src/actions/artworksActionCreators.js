@@ -34,7 +34,6 @@ export const fetchProposals = token => {
       endpoint: `http://localhost:8080/api/v1/proposals/`,
       method: "GET",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
         Authorization: `Bearer ${token}`
       },
       types: [

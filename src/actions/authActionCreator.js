@@ -7,13 +7,14 @@ export const createSession = signInData => {
     CREATE_SESSION_SUCCESS,
     CREATE_SESSION_FAILURE
   } = ActionTypes;
-
+  const loginInfo = `login=${signInData.login}&password=${signInData.password}`;
+  
   return {
     [RSAA]: {
       endpoint: `http://localhost:8080/api/v1/auth/signin/`,
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(signInData),
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: loginInfo,
       types: [
         CREATE_SESSION_REQUEST,
         CREATE_SESSION_SUCCESS,
