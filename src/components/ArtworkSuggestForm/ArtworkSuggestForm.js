@@ -117,7 +117,7 @@ class ArtworkSuggestForm extends Component {
             />
           </Form.Group>
           <Form.Row>
-            <Form.Group controlId="formGroupZipCode">
+            <Form.Group controlId="formGroupZipCode" id="input-zipcode">
               <Form.Control
                 type="text"
                 placeholder="Enter a zip code..."
@@ -127,7 +127,7 @@ class ArtworkSuggestForm extends Component {
                 required
               />
             </Form.Group>
-            <Form.Group controlId="formGroupCity" className="input-city">
+            <Form.Group controlId="formGroupCity">
               <Form.Control
                 type="text"
                 placeholder="Enter a city..."
