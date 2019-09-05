@@ -90,9 +90,7 @@ class SignInForm extends Component {
             <strong>Sign In</strong>
           </Card.Header>
           <Card.Body>
-            <Card.Text className="down-lg">
-              {this.renderForm()}
-            </Card.Text>
+            {this.renderForm()}
           </Card.Body>
         </Card>
         {this.renderSubmitButton()}

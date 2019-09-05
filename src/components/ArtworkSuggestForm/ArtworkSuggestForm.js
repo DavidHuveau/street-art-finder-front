@@ -196,7 +196,7 @@ class ArtworkSuggestForm extends Component {
           <Card.Body>
             Fill in the form below. If appoved, your suggested place will appear
             on this map!
-            <Card.Text className="down-lg">{this.renderForm()}</Card.Text>
+            <div className="down-lg">{this.renderForm()}</div>
           </Card.Body>
         </Card>
         {this.renderSubmitButton()}
