@@ -89,7 +89,7 @@ class ArtworkSuggestForm extends Component {
 
     return (
       <Form methode="POST" onSubmit={this.onSubmit}>
-        <Form.Group controlId="formGroupName" className="box">
+        <Form.Group controlId="formGroupName">
           <Form.Label>Name</Form.Label>
           <Form.Text className="text-muted">Your name.</Form.Text>
           <Form.Control
@@ -101,45 +101,41 @@ class ArtworkSuggestForm extends Component {
             required
           />
         </Form.Group>
-        <div className="box">
-          <Form.Group controlId="formGroupAddress">
-            <Form.Label>Address</Form.Label>
-            <Form.Text className="text-muted">
-              Address of the artwork.
-            </Form.Text>
+        <Form.Group controlId="formGroupAddress">
+          <Form.Label>Address</Form.Label>
+          <Form.Text className="text-muted">Address of the artwork.</Form.Text>
+          <Form.Control
+            type="text"
+            placeholder="Enter a street address..."
+            value={adressStreet}
+            onChange={this.onChangeValue}
+            name="adressStreet"
+            required
+          />
+        </Form.Group>
+        <Form.Row>
+          <Form.Group controlId="formGroupZipCode" id="input-zipcode">
             <Form.Control
               type="text"
-              placeholder="Enter a street address..."
-              value={adressStreet}
+              placeholder="Enter a zip code..."
+              value={zipCode}
               onChange={this.onChangeValue}
-              name="adressStreet"
+              name="zipCode"
               required
             />
           </Form.Group>
-          <Form.Row>
-            <Form.Group controlId="formGroupZipCode" id="input-zipcode">
-              <Form.Control
-                type="text"
-                placeholder="Enter a zip code..."
-                value={zipCode}
-                onChange={this.onChangeValue}
-                name="zipCode"
-                required
-              />
-            </Form.Group>
-            <Form.Group controlId="formGroupCity">
-              <Form.Control
-                type="text"
-                placeholder="Enter a city..."
-                value={city}
-                onChange={this.onChangeValue}
-                name="city"
-                required
-              />
-            </Form.Group>
-          </Form.Row>
-        </div>
-        <Form.Group controlId="formGroupDescription" className="box">
+          <Form.Group controlId="formGroupCity">
+            <Form.Control
+              type="text"
+              placeholder="Enter a city..."
+              value={city}
+              onChange={this.onChangeValue}
+              name="city"
+              required
+            />
+          </Form.Group>
+        </Form.Row>
+        <Form.Group controlId="formGroupDescription">
           <Form.Label>Description</Form.Label>
           <Form.Text className="text-muted">
             Description of the artwork.
@@ -154,7 +150,7 @@ class ArtworkSuggestForm extends Component {
             required
           />
         </Form.Group>
-        <Form.Group controlId="formGroupImage" className="box">
+        <Form.Group controlId="formGroupImage">
           <Form.Label>Image</Form.Label>
           <Form.Text className="text-muted">Image of the artwork.</Form.Text>
           <input
@@ -182,7 +178,7 @@ class ArtworkSuggestForm extends Component {
     );
 
     return (
-      <div className="box float-right">
+      <div className="float-right">
         <Button variant="primary" type="submit" disabled={isUploading}>
           {contentButton}
         </Button>
@@ -192,21 +188,18 @@ class ArtworkSuggestForm extends Component {
 
   render() {
     return (
-      <Container style={{ marginBottom: "70px"}}>
-      {/* <div className="down-lg"> */}
+      <Container style={{ marginBottom: "70px" }}>
         <Card bsPrefix="Suggest" className="down-lg">
           <Card.Header>
             <strong>Suggest</strong>
           </Card.Header>
           <Card.Body>
-            Fill in the form below. If appoved, your suggested place will appear on this map!
-            <Card.Text className="down-lg">
-              {this.renderForm()}
-            </Card.Text>
+            Fill in the form below. If appoved, your suggested place will appear
+            on this map!
+            <Card.Text className="down-lg">{this.renderForm()}</Card.Text>
           </Card.Body>
         </Card>
         {this.renderSubmitButton()}
-      {/* </div> */}
       </Container>
     );
   }

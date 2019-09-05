@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Form, Button } from "react-bootstrap";
+import "./SigninForm.css";
+import { Form, Button, Card, Container } from "react-bootstrap";
 
 class SignInForm extends Component {
   constructor() {
     super();
 
-    ["onChangeValue", "onSubmit"].forEach(
+    ["onChangeValue", "onSubmit", "renderForm"].forEach(
       fn => (this[fn] = this[fn].bind(this))
     );
 
@@ -35,47 +36,67 @@ class SignInForm extends Component {
     onSubmit({ login: login, password: password });
   }
 
-  render() {
+  renderForm() {
     const { login, password } = this.state;
 
     return (
-      <div>
-        <Form
-          methode="POST"
-          onSubmit={this.onSubmit}
-          style={{ width: "80%", margin: "auto" }}
-        >
-          <Form.Group controlId="formGroupLogin" className="box">
-            <Form.Label>Login</Form.Label>
-            <Form.Text className="text-muted">Your login.</Form.Text>
-            <Form.Control
-              type="text"
-              placeholder="Enter a login..."
-              value={login}
-              onChange={this.onChangeValue}
-              name="login"
-              required
-            />
-          </Form.Group>
-          <Form.Group controlId="formGroupPassword" className="box">
-            <Form.Label>Password</Form.Label>
-            <Form.Text className="text-muted">Your password.</Form.Text>
-            <Form.Control
-              type="password"
-              placeholder="Enter a password..."
-              value={password}
-              onChange={this.onChangeValue}
-              name="password"
-              required
-            />
-          </Form.Group>
-          <div className="box float-right">
-            <Button type="submit" color="primary">
-              SignIn
-            </Button>
-          </div>
-        </Form>
+      <Form
+      methode="POST"
+      onSubmit={this.onSubmit}
+      >
+        <Form.Group controlId="formGroupLogin">
+          <Form.Label>Login</Form.Label>
+          <Form.Text className="text-muted">Your login.</Form.Text>
+          <Form.Control
+            type="text"
+            placeholder="Enter a login..."
+            value={login}
+            onChange={this.onChangeValue}
+            name="login"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="formGroupPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Text className="text-muted">Your password.</Form.Text>
+          <Form.Control
+            type="password"
+            placeholder="Enter a password..."
+            value={password}
+            onChange={this.onChangeValue}
+            name="password"
+            required
+          />
+        </Form.Group>
+      </Form>
+    );
+  }
+
+  renderSubmitButton() {
+    return (
+      <div className="float-right">
+        <Button type="submit" color="primary">
+          Login
+        </Button>
       </div>
+    );
+  }
+
+  render() {
+    return (
+      <Container style={{ marginBottom: "70px"}}>
+        <Card bsPrefix="Signin" className="down-lg">
+          <Card.Header>
+            <strong>Sign In</strong>
+          </Card.Header>
+          <Card.Body>
+            <Card.Text className="down-lg">
+              {this.renderForm()}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        {this.renderSubmitButton()}
+      </Container>
     );
   }
 }
