@@ -51,7 +51,7 @@ class ArtworkInfosPane extends Component {
               backgroundImage: `url(http://localhost:8080/api/v1/public/artworks/${photoFileName})`
             }}
           />
-          <div className="box">
+          <div className="Infos-box">
             {this.renderDateInfo(createdAt)}
             <div id="Infos-address" className="main-color">
               {`${adressStreet}, ${zipCode}, ${city}`}
@@ -59,7 +59,7 @@ class ArtworkInfosPane extends Component {
             </div>
             <>{country.name}</>
           </div>
-          <div className="box">
+          <div className="Infos-box">
             <h2>
               Suggested by<span className="main-color"> {userName}</span>
             </h2>

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./ArtworkSuggestForm.css";
-import { Form, Button, Spinner } from "react-bootstrap";
+import { Form, Button, Spinner, Card, Container } from "react-bootstrap";
 
 class ArtworkSuggestForm extends Component {
   constructor(props) {
@@ -165,7 +165,6 @@ class ArtworkSuggestForm extends Component {
             required
           />
         </Form.Group>
-        {this.renderSubmitButton()}
       </Form>
     );
   }
@@ -193,16 +192,22 @@ class ArtworkSuggestForm extends Component {
 
   render() {
     return (
-      <div>
-        <div className="box">
-          <h2 className="main-color">Suggest</h2>
-          <p>
-            Fill in the form below. If appoved, your suggested place will appear
-            on this map!
-          </p>
-        </div>
-        {this.renderForm()}
-      </div>
+      <Container style={{ marginBottom: "70px"}}>
+      {/* <div className="down-lg"> */}
+        <Card bsPrefix="Suggest" className="down-lg">
+          <Card.Header>
+            <strong>Suggest</strong>
+          </Card.Header>
+          <Card.Body>
+            Fill in the form below. If appoved, your suggested place will appear on this map!
+            <Card.Text className="down-lg">
+              {this.renderForm()}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        {this.renderSubmitButton()}
+      {/* </div> */}
+      </Container>
     );
   }
 }
