@@ -40,10 +40,7 @@ class SignInForm extends Component {
     const { login, password } = this.state;
 
     return (
-      <Form
-      methode="POST"
-      onSubmit={this.onSubmit}
-      >
+      <Form>
         <Form.Group controlId="formGroupLogin">
           <Form.Label>Login</Form.Label>
           <Form.Text className="text-muted">Your login.</Form.Text>
@@ -75,7 +72,7 @@ class SignInForm extends Component {
   renderSubmitButton() {
     return (
       <div className="float-right">
-        <Button type="submit" color="primary">
+        <Button type="submit" color="primary" onClick={this.onSubmit}>
           Login
         </Button>
       </div>
