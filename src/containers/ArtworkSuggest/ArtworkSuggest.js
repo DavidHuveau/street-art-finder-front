@@ -40,6 +40,7 @@ class ArtworkSuggest extends Component {
       <div ref={ref => (this.el = ref)}>
         <SlidingPane
           // className="width-100-xs width-80-sm"
+          className="width-80-sm"
           isOpen={isArtworkSuggestPaneOpen}
           title={"Back"}
           from="right"

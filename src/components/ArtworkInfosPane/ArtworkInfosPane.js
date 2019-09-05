@@ -37,11 +37,10 @@ class ArtworkInfosPane extends Component {
     return (
       <div ref={ref => (this.el = ref)}>
         <SlidingPane
-          // className="width-100-xs width-80-sm"
           isOpen={isOpen}
           title={"Back"}
           from="right"
-          width="100%"
+          width="320px"
           onRequestClose={onRequestClose}
         >
           {/* <div id="Infos-pic-header"> */}

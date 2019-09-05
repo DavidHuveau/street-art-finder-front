@@ -1,8 +1,4 @@
 
-/* #Infos-pic-header {
-  height: 400px;
-} */
-
 #Infos-pic {
   height: 400px;
   width: 320px;
@@ -13,6 +9,10 @@
   background-size: cover;
   background-position: 50% 70%;
 }
+
+/* #Infos-pic-header {
+  height: 400px;
+} */
 
 #Infos-address {
   white-space: nowrap;
