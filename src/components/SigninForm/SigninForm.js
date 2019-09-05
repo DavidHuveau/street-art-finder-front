@@ -40,7 +40,7 @@ class SignInForm extends Component {
     const { login, password } = this.state;
 
     return (
-      <Form>
+      <div>
         <Form.Group controlId="formGroupLogin">
           <Form.Label>Login</Form.Label>
           <Form.Text className="text-muted">Your login.</Form.Text>
@@ -65,14 +65,14 @@ class SignInForm extends Component {
             required
           />
         </Form.Group>
-      </Form>
+      </div>
     );
   }
 
   renderSubmitButton() {
     return (
       <div className="float-right">
-        <Button type="submit" color="primary" onClick={this.onSubmit}>
+        <Button type="submit" color="primary">
           Login
         </Button>
       </div>
@@ -81,17 +81,19 @@ class SignInForm extends Component {
 
   render() {
     return (
-      <Container style={{ marginBottom: "70px"}}>
-        <Card bsPrefix="Signin" className="down-lg">
-          <Card.Header>
-            <strong>Sign In</strong>
-          </Card.Header>
-          <Card.Body>
-            {this.renderForm()}
-          </Card.Body>
-        </Card>
-        {this.renderSubmitButton()}
-      </Container>
+      <Form method="POST" onSubmit={this.onSubmit}>
+        <Container style={{ marginBottom: "70px"}}>
+          <Card bsPrefix="Signin" className="down-lg">
+            <Card.Header>
+              <strong>Sign In</strong>
+            </Card.Header>
+            <Card.Body>
+              {this.renderForm()}
+            </Card.Body>
+          </Card>
+          {this.renderSubmitButton()}
+        </Container>
+      </Form>
     );
   }
 }

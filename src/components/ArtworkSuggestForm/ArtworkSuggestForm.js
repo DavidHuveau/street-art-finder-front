@@ -88,7 +88,7 @@ class ArtworkSuggestForm extends Component {
     const { userName, adressStreet, zipCode, city, description } = this.state;
 
     return (
-      <Form>
+      <div className="down-lg">
         <Form.Group controlId="formGroupName">
           <Form.Label>Name</Form.Label>
           <Form.Text className="text-muted">Your name.</Form.Text>
@@ -161,7 +161,7 @@ class ArtworkSuggestForm extends Component {
             required
           />
         </Form.Group>
-      </Form>
+      </div>
     );
   }
 
@@ -179,7 +179,7 @@ class ArtworkSuggestForm extends Component {
 
     return (
       <div className="float-right">
-        <Button variant="primary" type="submit" disabled={isUploading} onClick={this.onSubmit}>
+        <Button variant="primary" type="submit" disabled={isUploading}>
           {contentButton}
         </Button>
       </div>
@@ -188,19 +188,21 @@ class ArtworkSuggestForm extends Component {
 
   render() {
     return (
-      <Container style={{ marginBottom: "70px" }}>
-        <Card bsPrefix="Suggest" className="down-lg">
-          <Card.Header>
-            <strong>Suggest</strong>
-          </Card.Header>
-          <Card.Body>
-            Fill in the form below. If appoved, your suggested place will appear
-            on this map!
-            <div className="down-lg">{this.renderForm()}</div>
-          </Card.Body>
-        </Card>
-        {this.renderSubmitButton()}
-      </Container>
+      <Form method="POST" onSubmit={this.onSubmit}>
+        <Container style={{ marginBottom: "70px" }}>
+          <Card bsPrefix="Suggest" className="down-lg">
+            <Card.Header>
+              <strong>Suggest</strong>
+            </Card.Header>
+            <Card.Body>
+              Fill in the form below. If appoved, your suggested place will appear
+              on this map!
+              {this.renderForm()}
+            </Card.Body>
+          </Card>
+          {this.renderSubmitButton()}
+        </Container>
+      </Form>
     );
   }
 }
