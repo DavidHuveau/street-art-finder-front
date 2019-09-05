@@ -81,7 +81,7 @@ class SignInForm extends Component {
 
   render() {
     return (
-      <Form method="POST" onSubmit={this.onSubmit}>
+      <Form onSubmit={this.onSubmit}>
         <Container style={{ marginBottom: "70px"}}>
           <Card bsPrefix="Signin" className="down-lg">
             <Card.Header>

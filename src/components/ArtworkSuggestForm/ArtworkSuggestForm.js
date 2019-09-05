@@ -188,7 +188,7 @@ class ArtworkSuggestForm extends Component {
 
   render() {
     return (
-      <Form method="POST" onSubmit={this.onSubmit}>
+      <Form onSubmit={this.onSubmit}>
         <Container style={{ marginBottom: "70px" }}>
           <Card bsPrefix="Suggest" className="down-lg">
             <Card.Header>
