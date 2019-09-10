@@ -5,6 +5,7 @@ import ArtworksMap from "../ArtworksMap/ArtworksMap";
 import SearchArtworks from "../../components/SearchArtworks/SearchArtworks";
 import { connect } from "react-redux";
 import { fetchArtworks } from "../../actions/artworksActionCreators";
+import { Helmet } from "react-helmet";
 
 const ArtworksExplore = props => {
   const getData = cityCriteria => {
@@ -15,6 +16,14 @@ const ArtworksExplore = props => {
 
   return (
     <div id="Exp-wrapper">
+      <Helmet>
+        <title>Street Art Finder</title>
+        <meta
+          name="description"
+          content="Interactive and participative online map to promote and list the works of street artists in the world"
+        />
+      </Helmet>
+
       <header>
         <h1 className="main-color">Street Art Finder</h1>
         <SearchArtworks onSearch={getData} />
