@@ -84,3 +84,7 @@ h3 {
 .slide-pane__close {
   margin-left: 0px !important;
 }
+
+figure {
+  margin: 0px;
+}

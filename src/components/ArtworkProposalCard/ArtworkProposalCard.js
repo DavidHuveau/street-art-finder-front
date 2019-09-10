@@ -29,10 +29,13 @@ const ArtworkProposalCard = ({
   return (
     <Card>
       <div className="Prop-preview-pic">
-        <Card.Img
-          variant="top"
-          src={`http://localhost:8080/api/v1/public/thumbnails/${photoFileName}`}
-        />
+        <figure>
+          <Card.Img
+            variant="top"
+            src={`http://localhost:8080/api/v1/public/thumbnails/${photoFileName}`}
+            alt={photoFileName}
+          />
+        </figure>
         <div className="Prop-preview-buttons">
           <Button
             className="float-right ml-2"

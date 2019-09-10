@@ -195,8 +195,10 @@ class ArtworkSuggestForm extends Component {
               <strong>Suggest</strong>
             </Card.Header>
             <Card.Body>
-              Fill in the form below. If appoved, your suggested place will appear
-              on this map!
+              <p>
+                Fill in the form below. If appoved, your suggested place will
+                appear on this map!
+              </p>
               {this.renderForm()}
             </Card.Body>
           </Card>

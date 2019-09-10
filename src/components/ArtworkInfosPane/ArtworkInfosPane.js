@@ -13,7 +13,7 @@ class ArtworkInfosPane extends Component {
   renderDateInfo(date) {
     moment.locale();
     const displayDate = moment(date).format("LL");
-    return <>{`Created ${displayDate}`}</>;
+    return <p>{`Created ${displayDate}`}</p>;
   }
 
   render() {
@@ -44,19 +44,22 @@ class ArtworkInfosPane extends Component {
           onRequestClose={onRequestClose}
         >
           {/* <div id="Infos-pic-header"> */}
-          <div
-            id="Infos-pic"
-            style={{
-              backgroundImage: `url(http://localhost:8080/api/v1/public/artworks/${photoFileName})`
-            }}
-          />
+          <figure>
+            <div
+              id="Infos-pic"
+              style={{
+                backgroundImage: `url(http://localhost:8080/api/v1/public/artworks/${photoFileName})`
+              }}
+            />
+          </figure>
           <div className="Infos-box">
             {this.renderDateInfo(createdAt)}
             <div id="Infos-address" className="main-color">
-              {`${adressStreet}, ${zipCode}, ${city}`}
+              <p>{`${adressStreet}, ${zipCode}, ${city}`}</p>
               {/* {`${adressStreet}, ${zipCode}, ${city}, ${status}`} */}
             </div>
-            <>{country.name}</>
+            <p>{country.name}</p>
+            {/* {country.name} */}
           </div>
           <div className="Infos-box">
             <h2>

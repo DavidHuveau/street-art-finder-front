@@ -14,6 +14,10 @@
   padding-left: 16px;
 }
 
+.Suggest .card-body p {
+  margin: 0px;
+}
+
 .Suggest .form-row {
   margin-right: 0px !important;
   margin-left: 0px !important;

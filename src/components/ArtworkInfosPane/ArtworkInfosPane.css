@@ -25,6 +25,10 @@
   border-bottom: 1px solid #f2f2f2;
 }
 
+.Infos-box p {
+  margin: 0px;
+}
+
 .Infos-box:last-child {
   border-bottom: 0;
 }

@@ -21,11 +21,13 @@ export default props => {
   return (
     <Marker position={position.coordinates} icon={myIcon}>
       <Popup>
-        <img
-          src={`http://localhost:8080/api/v1/public/thumbnails/${photoFileName}`}
-          alt={photoFileName}
-          width="200px"
-        />
+        <figure>
+          <img
+            src={`http://localhost:8080/api/v1/public/thumbnails/${photoFileName}`}
+            alt={photoFileName}
+            width="200px"
+          />
+        </figure>
         <br />
         <Button onClick={showArtworkInfosPane}>Show</Button>
       </Popup>
