@@ -53,7 +53,6 @@ class SearchArtworks extends Component {
           <FormControl
             type="text"
             placeholder="City"
-            aria-describedby="basic-addon1"
             value={valueCriteria}
             onChange={this.onChangeCriteria}
           />
