@@ -25,7 +25,7 @@ export default props => {
           <img
             src={`http://localhost:8080/api/v1/public/thumbnails/${photoFileName}`}
             alt={photoFileName}
-            width="200px"
+            // width="200px"
           />
         </figure>
         <br />

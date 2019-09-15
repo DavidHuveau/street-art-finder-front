@@ -3,3 +3,21 @@
   flex:1;
   flex-direction: column;
 }
+
+.leaflet-popup-content {
+  width: 200px !important;
+}
+
+.leaflet-popup-content figure img {
+  width: 200px;
+}
+
+@media screen and (max-width: 425px) {
+  .leaflet-popup-content {
+    width: 100px !important;
+  }
+
+  .leaflet-popup-content figure img {
+    width: 100px;
+  }
+}
