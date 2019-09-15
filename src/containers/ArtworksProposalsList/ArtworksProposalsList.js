@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ArtworksProposalsList.css";
-import { CardDeck } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ArtworkProposalCard from "../../components/ArtworkProposalCard/ArtworkProposalCard";
 import { connect } from "react-redux";
 import {
@@ -30,24 +30,33 @@ class ArtworksProposalsList extends Component {
 
     return (
       <div className="proposals-list-container">
-        <small className="text-muted ml-2">
+        <small className="text-muted">
           {artworks.length || 0} proposal(s) to valide
         </small>
-        <CardDeck>
-          {artworks.map((artwork, index) => (
-            <ArtworkProposalCard
-              key={index}
-              artwork={artwork}
-              publishProposal={id => publishProposal(id, token)}
-              noPublishProposal={id => noPublishProposal(id, token)}
-            />
-          ))}
-
-          {/* <ArtworkProposalCard />
-          <ArtworkProposalCard /> */}
-          {/* <ArtworkProposalCard />
-        <ArtworkProposalCard /> */}
-        </CardDeck>
+        <Container fluid="true">
+          <Row>
+            {artworks.map((artwork, index) => (
+              <>
+                <Col xs={12} sm={6} md={4} xl={3} className="proposals-list-item">
+                  <ArtworkProposalCard
+                    key={index}
+                    artwork={artwork}
+                    publishProposal={id => publishProposal(id, token)}
+                    noPublishProposal={id => noPublishProposal(id, token)}
+                  />
+                </Col>
+                {/* <Col xs={12} sm={6} md={4} xl={3} className="proposals-list-item">
+                  <ArtworkProposalCard
+                    key={index}
+                    artwork={artwork}
+                    publishProposal={id => publishProposal(id, token)}
+                    noPublishProposal={id => noPublishProposal(id, token)}
+                  />
+                </Col> */}
+              </>
+            ))}
+          </Row>
+        </Container>
       </div>
     );
   }

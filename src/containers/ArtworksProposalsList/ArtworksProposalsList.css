@@ -5,6 +5,11 @@
   overflow-y: auto;
 }
 
-.card-deck {
-  width: 100%;
+.proposals-list-container small {
+  padding-left: 15px;
+}
+
+.proposals-list-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }

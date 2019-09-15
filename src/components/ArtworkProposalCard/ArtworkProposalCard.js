@@ -38,7 +38,6 @@ const ArtworkProposalCard = ({
         </figure>
         <div className="Prop-preview-buttons">
           <Button
-            className="float-right ml-2"
             size="sm"
             variant="success"
             onClick={() => publishProposal(_id)}
@@ -46,7 +45,6 @@ const ArtworkProposalCard = ({
             Publish
           </Button>
           <Button
-            className="float-right"
             size="sm"
             variant="danger"
             onClick={() => noPublishProposal(_id)}
