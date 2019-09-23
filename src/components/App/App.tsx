@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Provider } from "react-redux";
 import configureStore from "../../store/configureStore";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import ArtworksExplore from "../../containers/ArtworksExplore/ArtworksExplore";
 import ArtworkSuggest from "../../containers/ArtworkSuggest/ArtworkSuggest";
 import Page404 from "../Page404/Page404";
@@ -16,6 +16,7 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <div className="App">
+      <BrowserRouter>
         <Switch>
           <Route path="/" exact component={ArtworksExplore} />
           <Route path="/suggest" component={ArtworkSuggest} />
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <Route path="/signin" component={ProposalsSignIn} />
           <Route component={Page404} />
         </Switch>
+        </BrowserRouter>
       </div>
     </Provider>
   );

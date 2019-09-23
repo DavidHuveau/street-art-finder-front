@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 export default ComposedComponent => {
   class Authentication extends Component {
-    componentWillMount() {
+    componentDidMount() {
       const { authenticated, history } = this.props;
       if (!authenticated) history.push("/signin");
     }

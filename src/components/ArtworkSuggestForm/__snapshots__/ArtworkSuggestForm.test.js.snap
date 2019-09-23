@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check Components Component ArtworkSuggestForm 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="container"
+    style={
+      Object {
+        "marginBottom": "70px",
+      }
+    }
+  >
+    <div
+      className="down-lg Suggest"
+    >
+      <div
+        className="card-header"
+      >
+        <strong>
+          Suggest
+        </strong>
+      </div>
+      <div
+        className="card-body"
+      >
+        <p>
+          Fill in the form below. If appoved, your suggested place will appear on this map!
+        </p>
+        <div
+          className="down-lg"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="form-label"
+              htmlFor="formGroupName"
+            >
+              Name
+            </label>
+            <small
+              className="text-muted form-text"
+            >
+              Your name.
+            </small>
+            <input
+              className="form-control"
+              id="formGroupName"
+              name="userName"
+              onChange={[Function]}
+              placeholder="Enter a name..."
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              className="form-label"
+              htmlFor="formGroupAddress"
+            >
+              Address
+            </label>
+            <small
+              className="text-muted form-text"
+            >
+              Address of the artwork.
+            </small>
+            <input
+              className="form-control"
+              id="formGroupAddress"
+              name="adressStreet"
+              onChange={[Function]}
+              placeholder="Enter a street address..."
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="form-row"
+          >
+            <div
+              className="form-group"
+              id="input-zipcode"
+            >
+              <input
+                className="form-control"
+                id="formGroupZipCode"
+                name="zipCode"
+                onChange={[Function]}
+                placeholder="Enter a zip code..."
+                required={true}
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              <input
+                className="form-control"
+                id="formGroupCity"
+                name="city"
+                onChange={[Function]}
+                placeholder="Enter a city..."
+                required={true}
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              className="form-label"
+              htmlFor="formGroupDescription"
+            >
+              Description
+            </label>
+            <small
+              className="text-muted form-text"
+            >
+              Description of the artwork.
+            </small>
+            <textarea
+              className="form-control"
+              id="formGroupDescription"
+              name="description"
+              onChange={[Function]}
+              placeholder="Enter a description..."
+              required={true}
+              rows="3"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              className="form-label"
+              htmlFor="formGroupImage"
+            >
+              Image
+            </label>
+            <small
+              className="text-muted form-text"
+            >
+              Image of the artwork.
+            </small>
+            <input
+              accept="image/*"
+              name="myFile"
+              onChange={[Function]}
+              required={true}
+              type="file"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="float-right"
+    >
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        type="submit"
+      >
+        Suggest
+      </button>
+    </div>
+  </div>
+</form>
+`;
