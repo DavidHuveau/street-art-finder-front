@@ -26,7 +26,7 @@ class ArtworkSuggestForm extends Component {
       zipCode: "",
       city: "",
       description: "",
-      country: "5c87d82de78b4e40b133c55b",
+      country: "5d8919ca6a7d8d996731b976",
       countryCode: "FR",
       selectedFile: ""
     };
