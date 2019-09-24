@@ -10,6 +10,9 @@
     "@types/react-redux": "^7.1.2",
     "@types/react-router-dom": "^4.3.5",
     "bootstrap": "^4.3.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
     "keymirror": "^0.1.1",
     "leaflet": "^1.5.1",
     "leaflet.markercluster": "^1.4.1",
@@ -24,7 +27,6 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-sliding-pane": "^3.1.0",
-    "react-test-renderer": "^16.9.0",
     "redux": "^4.0.4",
     "redux-api-middleware": "^3.0.1",
     "redux-logger": "^3.0.6",
@@ -52,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }

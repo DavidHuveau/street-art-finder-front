@@ -1,44 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check Components Component SearchArtworks 1`] = `
-<div
-  className="left-lg right-lg"
-  id="Srch-wrapper"
+<SearchArtworks
+  onSearch={[Function]}
 >
   <div
-    className="input-group"
+    className="left-lg right-lg"
+    id="Srch-wrapper"
   >
-    <div
-      className="input-group-prepend"
-    >
-      <button
-        className="btn btn-outline-secondary"
-        disabled={false}
-        onClick={[Function]}
-        type="submit"
+    <InputGroup>
+      <div
+        className="input-group"
       >
-        Search
-      </button>
-    </div>
-    <input
-      className="form-control"
-      onChange={[Function]}
-      placeholder="City"
-      type="text"
-      value=""
-    />
-    <div
-      className="input-group-append"
-    >
-      <button
-        className="btn btn-outline-secondary"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        X
-      </button>
-    </div>
+        <InputGroupPrepend>
+          <div
+            className="input-group-prepend"
+          >
+            <Button
+              active={false}
+              disabled={false}
+              onClick={[Function]}
+              type="submit"
+              variant="outline-secondary"
+            >
+              <button
+                className="btn btn-outline-secondary"
+                disabled={false}
+                onClick={[Function]}
+                type="submit"
+              >
+                Search
+              </button>
+            </Button>
+          </div>
+        </InputGroupPrepend>
+        <FormControl
+          onChange={[Function]}
+          placeholder="City"
+          type="text"
+          value="Reims"
+        >
+          <input
+            className="form-control"
+            onChange={[Function]}
+            placeholder="City"
+            type="text"
+            value="Reims"
+          />
+        </FormControl>
+        <InputGroupAppend>
+          <div
+            className="input-group-append"
+          >
+            <Button
+              active={false}
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+              variant="outline-secondary"
+            >
+              <button
+                className="btn btn-outline-secondary"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                X
+              </button>
+            </Button>
+          </div>
+        </InputGroupAppend>
+      </div>
+    </InputGroup>
   </div>
-</div>
+</SearchArtworks>
 `;

@@ -1,54 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check Components Component ArtworkSuggestForm 1`] = `
-<form
-  className=""
+<Form
+  inline={false}
   onSubmit={[Function]}
 >
-  <div
-    className="container"
+  <Container
+    fluid={false}
     style={
       Object {
         "marginBottom": "70px",
       }
     }
   >
-    <div
-      className="down-lg Suggest"
+    <Card
+      body={false}
+      bsPrefix="Suggest"
+      className="down-lg"
     >
-      <div
-        className="card-header"
-      >
+      <CardHeader>
         <strong>
           Suggest
         </strong>
-      </div>
-      <div
-        className="card-body"
-      >
+      </CardHeader>
+      <CardBody>
         <p>
           Fill in the form below. If appoved, your suggested place will appear on this map!
         </p>
         <div
           className="down-lg"
         >
-          <div
-            className="form-group"
+          <FormGroup
+            controlId="formGroupName"
           >
-            <label
-              className="form-label"
-              htmlFor="formGroupName"
+            <FormLabel
+              column={false}
+              srOnly={false}
             >
               Name
-            </label>
-            <small
-              className="text-muted form-text"
+            </FormLabel>
+            <FormText
+              className="text-muted"
             >
               Your name.
-            </small>
-            <input
-              className="form-control"
-              id="formGroupName"
+            </FormText>
+            <FormControl
               name="userName"
               onChange={[Function]}
               placeholder="Enter a name..."
@@ -56,24 +52,22 @@ exports[`Check Components Component ArtworkSuggestForm 1`] = `
               type="text"
               value=""
             />
-          </div>
-          <div
-            className="form-group"
+          </FormGroup>
+          <FormGroup
+            controlId="formGroupAddress"
           >
-            <label
-              className="form-label"
-              htmlFor="formGroupAddress"
+            <FormLabel
+              column={false}
+              srOnly={false}
             >
               Address
-            </label>
-            <small
-              className="text-muted form-text"
+            </FormLabel>
+            <FormText
+              className="text-muted"
             >
               Address of the artwork.
-            </small>
-            <input
-              className="form-control"
-              id="formGroupAddress"
+            </FormText>
+            <FormControl
               name="adressStreet"
               onChange={[Function]}
               placeholder="Enter a street address..."
@@ -81,17 +75,13 @@ exports[`Check Components Component ArtworkSuggestForm 1`] = `
               type="text"
               value=""
             />
-          </div>
-          <div
-            className="form-row"
-          >
-            <div
-              className="form-group"
+          </FormGroup>
+          <FormRow>
+            <FormGroup
+              controlId="formGroupZipCode"
               id="input-zipcode"
             >
-              <input
-                className="form-control"
-                id="formGroupZipCode"
+              <FormControl
                 name="zipCode"
                 onChange={[Function]}
                 placeholder="Enter a zip code..."
@@ -99,13 +89,11 @@ exports[`Check Components Component ArtworkSuggestForm 1`] = `
                 type="text"
                 value=""
               />
-            </div>
-            <div
-              className="form-group"
+            </FormGroup>
+            <FormGroup
+              controlId="formGroupCity"
             >
-              <input
-                className="form-control"
-                id="formGroupCity"
+              <FormControl
                 name="city"
                 onChange={[Function]}
                 placeholder="Enter a city..."
@@ -113,25 +101,24 @@ exports[`Check Components Component ArtworkSuggestForm 1`] = `
                 type="text"
                 value=""
               />
-            </div>
-          </div>
-          <div
-            className="form-group"
+            </FormGroup>
+          </FormRow>
+          <FormGroup
+            controlId="formGroupDescription"
           >
-            <label
-              className="form-label"
-              htmlFor="formGroupDescription"
+            <FormLabel
+              column={false}
+              srOnly={false}
             >
               Description
-            </label>
-            <small
-              className="text-muted form-text"
+            </FormLabel>
+            <FormText
+              className="text-muted"
             >
               Description of the artwork.
-            </small>
-            <textarea
-              className="form-control"
-              id="formGroupDescription"
+            </FormText>
+            <FormControl
+              as="textarea"
               name="description"
               onChange={[Function]}
               placeholder="Enter a description..."
@@ -139,21 +126,21 @@ exports[`Check Components Component ArtworkSuggestForm 1`] = `
               rows="3"
               value=""
             />
-          </div>
-          <div
-            className="form-group"
+          </FormGroup>
+          <FormGroup
+            controlId="formGroupImage"
           >
-            <label
-              className="form-label"
-              htmlFor="formGroupImage"
+            <FormLabel
+              column={false}
+              srOnly={false}
             >
               Image
-            </label>
-            <small
-              className="text-muted form-text"
+            </FormLabel>
+            <FormText
+              className="text-muted"
             >
               Image of the artwork.
-            </small>
+            </FormText>
             <input
               accept="image/*"
               name="myFile"
@@ -161,21 +148,22 @@ exports[`Check Components Component ArtworkSuggestForm 1`] = `
               required={true}
               type="file"
             />
-          </div>
+          </FormGroup>
         </div>
-      </div>
-    </div>
+      </CardBody>
+    </Card>
     <div
       className="float-right"
     >
-      <button
-        className="btn btn-primary"
+      <Button
+        active={false}
         disabled={false}
         type="submit"
+        variant="primary"
       >
         Suggest
-      </button>
+      </Button>
     </div>
-  </div>
-</form>
+  </Container>
+</Form>
 `;

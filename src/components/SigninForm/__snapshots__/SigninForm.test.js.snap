@@ -1,49 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check Components Component SigninForm 1`] = `
-<form
-  className=""
+<Form
+  inline={false}
   onSubmit={[Function]}
 >
-  <div
-    className="container"
+  <Container
+    fluid={false}
     style={
       Object {
         "marginBottom": "70px",
       }
     }
   >
-    <div
-      className="down-lg Signin"
+    <Card
+      body={false}
+      bsPrefix="Signin"
+      className="down-lg"
     >
-      <div
-        className="card-header"
-      >
+      <CardHeader>
         <strong>
           Sign In
         </strong>
-      </div>
-      <div
-        className="card-body"
-      >
+      </CardHeader>
+      <CardBody>
         <div>
-          <div
-            className="form-group"
+          <FormGroup
+            controlId="formGroupLogin"
           >
-            <label
-              className="form-label"
-              htmlFor="formGroupLogin"
+            <FormLabel
+              column={false}
+              srOnly={false}
             >
               Login
-            </label>
-            <small
-              className="text-muted form-text"
+            </FormLabel>
+            <FormText
+              className="text-muted"
             >
               Your login.
-            </small>
-            <input
-              className="form-control"
-              id="formGroupLogin"
+            </FormText>
+            <FormControl
               name="login"
               onChange={[Function]}
               placeholder="Enter a login..."
@@ -51,24 +47,22 @@ exports[`Check Components Component SigninForm 1`] = `
               type="text"
               value=""
             />
-          </div>
-          <div
-            className="form-group"
+          </FormGroup>
+          <FormGroup
+            controlId="formGroupPassword"
           >
-            <label
-              className="form-label"
-              htmlFor="formGroupPassword"
+            <FormLabel
+              column={false}
+              srOnly={false}
             >
               Password
-            </label>
-            <small
-              className="text-muted form-text"
+            </FormLabel>
+            <FormText
+              className="text-muted"
             >
               Your password.
-            </small>
-            <input
-              className="form-control"
-              id="formGroupPassword"
+            </FormText>
+            <FormControl
               name="password"
               onChange={[Function]}
               placeholder="Enter a password..."
@@ -76,22 +70,23 @@ exports[`Check Components Component SigninForm 1`] = `
               type="password"
               value=""
             />
-          </div>
+          </FormGroup>
         </div>
-      </div>
-    </div>
+      </CardBody>
+    </Card>
     <div
       className="float-right"
     >
-      <button
-        className="btn btn-primary"
+      <Button
+        active={false}
         color="primary"
         disabled={false}
         type="submit"
+        variant="primary"
       >
         Login
-      </button>
+      </Button>
     </div>
-  </div>
-</form>
+  </Container>
+</Form>
 `;

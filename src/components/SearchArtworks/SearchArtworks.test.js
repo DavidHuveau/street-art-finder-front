@@ -1,12 +1,18 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { mount } from 'enzyme';
 import SearchArtworks from "./SearchArtworks";
 
 describe("Check Components", () => {
   it("Component SearchArtworks", () => {
-    const tree = renderer
-      .create(<SearchArtworks />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+    const component = mount(<SearchArtworks />);
+    component.find("input").simulate('change', {
+      target: { value: 'Reims' }
+    })
+
+    expect(component.state('valueCriteria')).toEqual('Reims')
+    expect(component).toMatchSnapshot();
+
+    component.unmount();
   })
 })
+

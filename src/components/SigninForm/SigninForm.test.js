@@ -1,12 +1,11 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { shallow } from 'enzyme';
 import SigninForm from "./SigninForm";
 
 describe("Check Components", () => {
-  it("Component SigninForm", () => {
-    const tree = renderer
-      .create(<SigninForm />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+  fit("Component SigninForm", () => {
+    const component = shallow(<SigninForm />);
+    expect(component).toMatchSnapshot();
   })
 })
+
