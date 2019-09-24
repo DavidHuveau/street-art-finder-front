@@ -46,6 +46,7 @@ class SearchArtworks extends Component {
               variant="outline-secondary"
               type="submit"
               onClick={this.onClickSearch}
+              id="submit-button"
             >
               Search
             </Button>

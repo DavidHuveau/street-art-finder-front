@@ -2,7 +2,21 @@
 
 exports[`Check Components Component SearchArtworks 1`] = `
 <SearchArtworks
-  onSearch={[Function]}
+  onSearch={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          "Reims",
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
 >
   <div
     className="left-lg right-lg"
@@ -19,6 +33,7 @@ exports[`Check Components Component SearchArtworks 1`] = `
             <Button
               active={false}
               disabled={false}
+              id="submit-button"
               onClick={[Function]}
               type="submit"
               variant="outline-secondary"
@@ -26,6 +41,7 @@ exports[`Check Components Component SearchArtworks 1`] = `
               <button
                 className="btn btn-outline-secondary"
                 disabled={false}
+                id="submit-button"
                 onClick={[Function]}
                 type="submit"
               >

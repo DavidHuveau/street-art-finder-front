@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from 'enzyme';
+import { shallow } from "enzyme";
 import ArtworkSuggestForm from "./ArtworkSuggestForm";
 
 describe("Check Components", () => {
@@ -7,6 +7,5 @@ describe("Check Components", () => {
     const component = shallow(<ArtworkSuggestForm />);
 
     expect(component).toMatchSnapshot();
-  })
-})
-
+  });
+});
