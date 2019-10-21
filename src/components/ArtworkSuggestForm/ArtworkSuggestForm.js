@@ -120,7 +120,7 @@ class ArtworkSuggestForm extends Component {
           />
         </Form.Group>
         <Form.Group controlId="formGroupName">
-          <Form.Label>Name</Form.Label>
+          <Form.Label>Photo credits</Form.Label>
           <Form.Text className="text-muted">Your name.</Form.Text>
           <Form.Control
             type="text"
@@ -133,7 +133,7 @@ class ArtworkSuggestForm extends Component {
         </Form.Group>
         <Form.Group controlId="formGroupImage">
           <Form.Label>Image</Form.Label>
-          <Form.Text className="text-muted">Image of the artwork.</Form.Text>
+          <Form.Text className="text-muted">Image of the artwork. You can upload one image.</Form.Text>
           <input
             type="file"
             accept="image/*"
