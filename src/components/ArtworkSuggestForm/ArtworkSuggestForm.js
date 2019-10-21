@@ -60,10 +60,8 @@ class ArtworkSuggestForm extends Component {
       <div className="down-lg">
         <Form.Group controlId="formGroupName">
           <Form.Label>Artist name</Form.Label>
-          <Form.Text className="text-muted">Artist name.</Form.Text>
           <Form.Control
             type="text"
-            placeholder="Enter a artist name..."
             value={artistName}
             onChange={this.onChangeValue}
             name="artistName"
@@ -72,10 +70,9 @@ class ArtworkSuggestForm extends Component {
         </Form.Group>
         <Form.Group controlId="formGroupAddress">
           <Form.Label>Address</Form.Label>
-          <Form.Text className="text-muted">Address of the artwork.</Form.Text>
           <Form.Control
             type="text"
-            placeholder="Enter a street address..."
+            placeholder="Street address..."
             value={adressStreet}
             onChange={this.onChangeValue}
             name="adressStreet"
@@ -86,7 +83,7 @@ class ArtworkSuggestForm extends Component {
           <Form.Group controlId="formGroupZipCode" id="input-zipcode">
             <Form.Control
               type="text"
-              placeholder="Enter a zip code..."
+              placeholder="Zip code..."
               value={zipCode}
               onChange={this.onChangeValue}
               name="zipCode"
@@ -96,7 +93,7 @@ class ArtworkSuggestForm extends Component {
           <Form.Group controlId="formGroupCity">
             <Form.Control
               type="text"
-              placeholder="Enter a city..."
+              placeholder="City..."
               value={city}
               onChange={this.onChangeValue}
               name="city"
@@ -106,13 +103,9 @@ class ArtworkSuggestForm extends Component {
         </Form.Row>
         <Form.Group controlId="formGroupDescription">
           <Form.Label>Description</Form.Label>
-          <Form.Text className="text-muted">
-            Description of the artwork.
-          </Form.Text>
           <Form.Control
             as="textarea"
             rows="3"
-            placeholder="Enter a description..."
             value={description}
             onChange={this.onChangeValue}
             name="description"
@@ -121,10 +114,9 @@ class ArtworkSuggestForm extends Component {
         </Form.Group>
         <Form.Group controlId="formGroupName">
           <Form.Label>Photo credits</Form.Label>
-          <Form.Text className="text-muted">Your name.</Form.Text>
           <Form.Control
             type="text"
-            placeholder="Enter a name..."
+            placeholder="Name or username..."
             value={userName}
             onChange={this.onChangeValue}
             name="userName"
@@ -133,7 +125,6 @@ class ArtworkSuggestForm extends Component {
         </Form.Group>
         <Form.Group controlId="formGroupImage">
           <Form.Label>Image</Form.Label>
-          <Form.Text className="text-muted">Image of the artwork. You can upload one image.</Form.Text>
           <input
             type="file"
             accept="image/*"
