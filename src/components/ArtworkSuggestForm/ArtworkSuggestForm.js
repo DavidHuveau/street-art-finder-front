@@ -125,7 +125,7 @@ class ArtworkSuggestForm extends Component {
         </Form.Group>
         <Form.Group controlId="formGroupImage">
           <Form.Label>Image</Form.Label>
-          <input
+          <Form.Control
             type="file"
             accept="image/*"
             onChange={this.fileChangedHandler}
