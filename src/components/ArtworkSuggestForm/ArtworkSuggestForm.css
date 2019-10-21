@@ -38,17 +38,17 @@
     padding: 0px;
   }
 
+  .Suggest-container button {
+    margin-right: 15px !important;
+  }
+
   .Suggest {
     border-radius: 0px;
     margin-top: 0px;
   }
 
-  [type=file] {
+  input[type=file] {
     font-size: 0.8em;
-  }
-
-  button {
-    margin-right: 15px;
   }
 
 }
