@@ -10,16 +10,6 @@ class ArtworkSuggestForm extends Component {
       fn => (this[fn] = this[fn].bind(this))
     );
 
-    // this.state = {
-    //   userName: "Fred",
-    //   adressStreet: "12 Avenue Brébant",
-    //   zipCode: "51100",
-    //   city: "Reims",
-    //   description: "description",
-    //   country: "5c87d82de78b4e40b133c55b",
-    //   countryCode: "FR",
-    //   selectedFile: ""
-    // };
     this.state = {
       userName: "",
       adressStreet: "",
@@ -57,31 +47,9 @@ class ArtworkSuggestForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    // document.querySelector
-
-    const {
-      userName,
-      adressStreet,
-      zipCode,
-      city,
-      description,
-      country,
-      countryCode,
-      selectedFile
-    } = this.state;
-
-    const formData = new FormData();
-    formData.append("userName", userName);
-    formData.append("adressStreet", adressStreet);
-    formData.append("zipCode", zipCode);
-    formData.append("city", city);
-    formData.append("description", description);
-    formData.append("country", country);
-    formData.append("countryCode", countryCode);
-    formData.append("myFile", selectedFile);
 
     const { onSubmit } = this.props;
-    onSubmit(formData);
+    onSubmit(this.state);
   }
 
   renderForm() {

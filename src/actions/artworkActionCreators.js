@@ -8,11 +8,32 @@ export const createArtwork = createData => {
     CREATE_ARTWORK_FAILURE
   } = ActionTypes;
 
+  const {
+    userName,
+    adressStreet,
+    zipCode,
+    city,
+    description,
+    country,
+    countryCode,
+    selectedFile
+  } = artwork;
+
+  const formData = new FormData();
+  formData.append("userName", userName);
+  formData.append("adressStreet", adressStreet);
+  formData.append("zipCode", zipCode);
+  formData.append("city", city);
+  formData.append("description", description);
+  formData.append("country", country);
+  formData.append("countryCode", countryCode);
+  formData.append("myFile", selectedFile);
+
   return {
     [RSAA]: {
       endpoint: `http://localhost:8080/api/v1/artworks/`,
       method: "POST",
-      body: createData,
+      body: formData,
       types: [
         CREATE_ARTWORK_REQUEST,
         CREATE_ARTWORK_SUCCESS,
