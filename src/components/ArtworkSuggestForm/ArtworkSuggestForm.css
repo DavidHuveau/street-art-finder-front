@@ -3,6 +3,7 @@
   border: solid 1px#ddd;
   border-radius: 4px;
   margin-bottom: 20px;
+  margin-top: 24px;
 }
 
 .Suggest .card-header {
@@ -31,9 +32,23 @@
   margin-right: 16px;
 }
 
+@media screen and (max-width: 425px) {
 
-/* @media screen and (min-width: 425px) {
-  #input-city {
-    margin-left: 16px;
+  .Suggest-container {
+    padding: 0px;
   }
-} */
+
+  .Suggest {
+    border-radius: 0px;
+    margin-top: 0px;
+  }
+
+  [type=file] {
+    font-size: 0.8em;
+  }
+
+  button {
+    margin-right: 15px;
+  }
+
+}
