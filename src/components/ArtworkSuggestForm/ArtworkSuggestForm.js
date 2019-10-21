@@ -18,7 +18,8 @@ class ArtworkSuggestForm extends Component {
       description: "",
       country: "5d8919ca6a7d8d996731b976",
       countryCode: "FR",
-      selectedFile: ""
+      selectedFile: "",
+      artistName: ""
     };
   }
 
@@ -53,19 +54,19 @@ class ArtworkSuggestForm extends Component {
   }
 
   renderForm() {
-    const { userName, adressStreet, zipCode, city, description } = this.state;
+    const { userName, adressStreet, zipCode, city, description, artistName } = this.state;
 
     return (
       <div className="down-lg">
         <Form.Group controlId="formGroupName">
-          <Form.Label>Name</Form.Label>
-          <Form.Text className="text-muted">Your name.</Form.Text>
+          <Form.Label>Artist name</Form.Label>
+          <Form.Text className="text-muted">Artist name.</Form.Text>
           <Form.Control
             type="text"
-            placeholder="Enter a name..."
-            value={userName}
+            placeholder="Enter a artist name..."
+            value={artistName}
             onChange={this.onChangeValue}
-            name="userName"
+            name="artistName"
             required
           />
         </Form.Group>
@@ -115,6 +116,18 @@ class ArtworkSuggestForm extends Component {
             value={description}
             onChange={this.onChangeValue}
             name="description"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="formGroupName">
+          <Form.Label>Name</Form.Label>
+          <Form.Text className="text-muted">Your name.</Form.Text>
+          <Form.Control
+            type="text"
+            placeholder="Enter a name..."
+            value={userName}
+            onChange={this.onChangeValue}
+            name="userName"
             required
           />
         </Form.Group>

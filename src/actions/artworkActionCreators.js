@@ -1,7 +1,7 @@
 import ActionTypes from "./actionTypes";
 import { RSAA } from "redux-api-middleware";
 
-export const createArtwork = createData => {
+export const createArtwork = artwork => {
   const {
     CREATE_ARTWORK_REQUEST,
     CREATE_ARTWORK_SUCCESS,
@@ -16,7 +16,8 @@ export const createArtwork = createData => {
     description,
     country,
     countryCode,
-    selectedFile
+    selectedFile,
+    artistName
   } = artwork;
 
   const formData = new FormData();
@@ -27,6 +28,7 @@ export const createArtwork = createData => {
   formData.append("description", description);
   formData.append("country", country);
   formData.append("countryCode", countryCode);
+  formData.append("artistName", artistName);
   formData.append("myFile", selectedFile);
 
   return {
