@@ -33,6 +33,8 @@ class ArtworkInfosPane extends Component {
     } = selectedArtwork;
 
     // const status = isActivated ? "active" : "inactive";
+    const urlPicture = `http://localhost:8080/api/v1/public/artworks/${photoFileName}`;
+    const addressInLine = `${adressStreet}, ${zipCode}, ${city}`;
 
     return (
       <div ref={ref => (this.el = ref)}>
@@ -43,19 +45,21 @@ class ArtworkInfosPane extends Component {
           width="320px"
           onRequestClose={onRequestClose}
         >
-          {/* <div id="Infos-pic-header"> */}
           <figure>
             <div
               id="Infos-pic"
               style={{
-                backgroundImage: `url(http://localhost:8080/api/v1/public/artworks/${photoFileName})`
+                backgroundImage: `url(${urlPicture})`
               }}
             />
           </figure>
           <div className="Infos-box">
+            <a href={urlPicture} data-fancybox="gallery" data-type="image" data-caption={addressInLine}>
+              Zoom
+            </a>
             {this.renderDateInfo(createdAt)}
             <div id="Infos-address" className="main-color">
-              <p>{`${adressStreet}, ${zipCode}, ${city}`}</p>
+              <p>{addressInLine}</p>
               {/* {`${adressStreet}, ${zipCode}, ${city}, ${status}`} */}
             </div>
             <p>{country.name}</p>
