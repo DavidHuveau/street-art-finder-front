@@ -45,18 +45,20 @@ class ArtworkInfosPane extends Component {
           width="320px"
           onRequestClose={onRequestClose}
         >
-          <figure>
+          <figure style={{ position: "relative" }}>
             <div
               id="Infos-pic"
               style={{
                 backgroundImage: `url(${urlPicture})`
               }}
             />
+            <div className="Action-button-zoom">
+              <a className="btn btn-link" href={urlPicture} data-fancybox="gallery" data-type="image" data-caption={addressInLine}>
+                <i class="fa fa-search-plus"></i>
+              </a>
+            </div>
           </figure>
           <div className="Infos-box">
-            <a href={urlPicture} data-fancybox="gallery" data-type="image" data-caption={addressInLine}>
-              Zoom
-            </a>
             {this.renderDateInfo(createdAt)}
             <div id="Infos-address" className="main-color">
               <p>{addressInLine}</p>
