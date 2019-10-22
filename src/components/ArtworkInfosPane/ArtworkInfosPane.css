@@ -39,11 +39,6 @@
   bottom: 10px;
 }
 
-.Action-button-zoom .btn {
-  background-color: #0069d9;
-  color: white;
-}
-
-.Action-button-zoom .btn:hover {
+/* .Action-button-zoom .btn:hover {
     color: black;
-}
+} */
