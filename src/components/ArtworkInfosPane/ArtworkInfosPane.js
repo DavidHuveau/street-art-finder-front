@@ -54,7 +54,7 @@ class ArtworkInfosPane extends Component {
             />
             <div className="Action-button-zoom">
               <a className="btn btn-primary" href={urlPicture} data-fancybox="gallery" data-type="image" data-caption={addressInLine}>
-                <i class="fa fa-search-plus"></i>
+                <i className="fa fa-search-plus"></i>
               </a>
             </div>
           </figure>
