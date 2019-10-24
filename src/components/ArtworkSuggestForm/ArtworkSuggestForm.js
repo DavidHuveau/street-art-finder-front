@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import "./ArtworkSuggestForm.css";
 import { Form, Button, Spinner, Card, Container } from "react-bootstrap";
+import { toast } from 'react-toastify';
 
 class ArtworkSuggestForm extends Component {
   constructor(props) {
@@ -26,9 +27,10 @@ class ArtworkSuggestForm extends Component {
   componentDidUpdate(prevProps) {
     const { error, isUploading, onRequestClose } = this.props;
     const { isUploading: prevIsUploading } = prevProps;
-    const isEndOfCallApiWithoutError = !isUploading && prevIsUploading;
+    const isEndOfCallApiWithoutError = !isUploading && prevIsUploading && !error;
 
-    if (isEndOfCallApiWithoutError && !error) {
+    if (isEndOfCallApiWithoutError) {
+      toast.success("Your suggestion is sent.");
       onRequestClose();
     }
   }

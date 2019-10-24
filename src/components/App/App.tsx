@@ -9,6 +9,8 @@ import Page404 from "../Page404/Page404";
 import ArtworksValidate from "../ArtworksValidate/ArtworksValidate";
 import ProposalsSignIn from "../../containers/ProposalsSignIn/ProposalsSignIn";
 import withRequireAuth from "../../containers/withRequireAuth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 const store = configureStore();
 
@@ -26,6 +28,7 @@ const App: React.FC = () => {
         </Switch>
         </BrowserRouter>
       </div>
+      <ToastContainer position="bottom-center" autoClose={3000} hideProgressBar={true} />
     </Provider>
   );
 };

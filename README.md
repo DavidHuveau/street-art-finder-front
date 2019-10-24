@@ -12,3 +12,6 @@ https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675
 
 Enzyme cheatsheet
 https://devhints.io/enzyme
+
+Toaster in react
+https://github.com/fkhadra/react-toastify
