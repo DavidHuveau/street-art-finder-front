@@ -4,7 +4,8 @@ import "react-sliding-pane/dist/react-sliding-pane.css";
 import SlidingPane from "react-sliding-pane";
 import Modal from "react-modal";
 import { connect } from "react-redux";
-import { createArtwork } from "../../actions/artworkActionCreators";
+import { createArtwork, clearArtworkError } from "../../actions/artworkActionCreators";
+import { toast } from 'react-toastify';
 
 class ArtworkSuggest extends Component {
   constructor(props) {
@@ -21,9 +22,25 @@ class ArtworkSuggest extends Component {
     Modal.setAppElement(this.el);
   }
 
+  componentDidUpdate(prevProps) {
+    const { error, isUploading } = this.props;
+    const { isUploading: prevIsUploading } = prevProps;
+    const isEndOfCallApiWithoutError = !isUploading && prevIsUploading && !error;
+
+    if (isEndOfCallApiWithoutError) {
+      toast.success("Your suggestion is sent.");
+      this.onRequestClose();
+    }
+    else if(error) {
+      toast.error(`Error - ${error}`);
+    }
+  }
+
   onRequestClose() {
-    this.setState(
-      {
+    const { clearArtworkError } = this.props;
+    clearArtworkError();
+
+    this.setState({
         isArtworkSuggestPaneOpen: false
       },
       () => {
@@ -34,7 +51,7 @@ class ArtworkSuggest extends Component {
 
   render() {
     const { isArtworkSuggestPaneOpen } = this.state;
-    const { createArtwork, isUploading } = this.props;
+    const { createArtwork } = this.props;
 
     return (
       <div ref={ref => (this.el = ref)}>
@@ -49,8 +66,6 @@ class ArtworkSuggest extends Component {
           <ArtworkSuggestForm
             {...this.props}
             onSubmit={createArtwork}
-            isUploading={isUploading}
-            onRequestClose={this.onRequestClose}
           />
         </SlidingPane>
       </div>
@@ -59,7 +74,8 @@ class ArtworkSuggest extends Component {
 }
 
 const mapDispatchToProps = {
-  createArtwork
+  createArtwork,
+  clearArtworkError
 };
 
 const mapStateToProps = state => {

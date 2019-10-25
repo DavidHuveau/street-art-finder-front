@@ -27,8 +27,13 @@ const artwork = (state = initialState, action) => {
         ...state,
         isUploading: false,
         artwork: {},
-        error: action.error
+        error: action.payload.response.message
       };
+    case ActionTypes.CLEAR_ARTWORK_ERROR:
+      return {
+        ...state,
+        error: null
+      }
     default:
       return state;
   }

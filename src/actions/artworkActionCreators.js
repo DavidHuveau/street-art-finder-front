@@ -45,6 +45,11 @@ export const createArtwork = artwork => {
   };
 };
 
+export const clearArtworkError = () => {
+  const { CLEAR_ARTWORK_ERROR } = ActionTypes;
+  return { type : CLEAR_ARTWORK_ERROR };
+}
+
 export const publishProposal = (id, token) => {
   const {
     PUBLISH_PROPOSAL_REQUEST,

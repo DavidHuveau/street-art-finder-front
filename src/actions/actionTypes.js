@@ -10,6 +10,8 @@ export default keyMirror({
   CREATE_ARTWORK_REQUEST: null,
   CREATE_ARTWORK_SUCCESS: null,
   CREATE_ARTWORK_FAILURE: null,
+  
+  CLEAR_ARTWORK_ERROR: null,
 
   // fetch proposals
   RECEIVE_PROPOSALS_REQUEST: null,

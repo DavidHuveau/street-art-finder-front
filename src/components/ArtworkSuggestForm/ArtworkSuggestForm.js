@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./ArtworkSuggestForm.css";
 import { Form, Button, Spinner, Card, Container } from "react-bootstrap";
-import { toast } from 'react-toastify';
 
 class ArtworkSuggestForm extends Component {
   constructor(props) {
@@ -22,17 +21,6 @@ class ArtworkSuggestForm extends Component {
       selectedFile: "",
       artistName: ""
     };
-  }
-
-  componentDidUpdate(prevProps) {
-    const { error, isUploading, onRequestClose } = this.props;
-    const { isUploading: prevIsUploading } = prevProps;
-    const isEndOfCallApiWithoutError = !isUploading && prevIsUploading && !error;
-
-    if (isEndOfCallApiWithoutError) {
-      toast.success("Your suggestion is sent.");
-      onRequestClose();
-    }
   }
 
   onChangeValue(e) {
@@ -67,7 +55,6 @@ class ArtworkSuggestForm extends Component {
             value={artistName}
             onChange={this.onChangeValue}
             name="artistName"
-            required
           />
         </Form.Group>
         <Form.Group controlId="formGroupAddress">
@@ -111,7 +98,6 @@ class ArtworkSuggestForm extends Component {
             value={description}
             onChange={this.onChangeValue}
             name="description"
-            required
           />
         </Form.Group>
         <Form.Group controlId="formGroupName">
