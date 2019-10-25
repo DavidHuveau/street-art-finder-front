@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./SearchArtworks.css";
-import { InputGroup, Button, FormControl } from "react-bootstrap";
+import { InputGroup, Button, FormControl, Form } from "react-bootstrap";
 import PropTypes from "prop-types";
 
 class SearchArtworks extends Component {
   constructor(props) {
     super(props);
 
-    ["onChangeCriteria", "onClickSearch", "onClickClear"].forEach(
+    ["onChangeCriteria", "onSubmit", "onClickClear", "onKeyPress"].forEach(
       fn => (this[fn] = this[fn].bind(this))
     );
 
@@ -23,7 +23,8 @@ class SearchArtworks extends Component {
     });
   }
 
-  onClickSearch() {
+  onSubmit(event) {
+    event.preventDefault();
     const { valueCriteria } = this.state;
     const { onSearch } = this.props;
 
@@ -36,20 +37,28 @@ class SearchArtworks extends Component {
     });
   }
 
+  onKeyPress(event) {
+    if (event.key === 'Enter') {
+      event.stopPropagation();
+      this.onSubmit(event);
+    }
+  }
+
   render() {
     const { valueCriteria } = this.state;
 
     return (
-      <div id="Srch-wrapper" className="left-lg right-lg">
+      <Form id="Srch-wrapper" className="left-lg right-lg" onSubmit={this.onSubmit}>
         <InputGroup>
           <FormControl
             type="text"
             placeholder="City"
             value={valueCriteria}
             onChange={this.onChangeCriteria}
+            onKeyPress={this.onKeyPress}
           />
           { valueCriteria.length > 0 && <InputGroup.Append>
-              <Button variant="outline-secondary" onClick={this.onClickClear}>
+              <Button variant="outline-secondary" className= "" onClick={this.onClickClear}>
                 <i className="fa fa-eraser"></i>
               </Button>
             </InputGroup.Append>
@@ -58,14 +67,13 @@ class SearchArtworks extends Component {
             <Button
               variant="outline-secondary"
               type="submit"
-              onClick={this.onClickSearch}
               id="submit-button"
             >
               <i className="fa fa-search-plus"></i>
             </Button>
           </InputGroup.Append>
         </InputGroup>
-      </div>
+      </Form>
     );
   }
 }
