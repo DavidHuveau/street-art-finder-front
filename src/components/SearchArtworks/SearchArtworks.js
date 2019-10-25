@@ -16,9 +16,10 @@ class SearchArtworks extends Component {
     };
   }
 
-  onChangeCriteria(e) {
+  onChangeCriteria({target}) {
+    const { value } = target;
     this.setState({
-      valueCriteria: e.target.value
+      valueCriteria: value
     });
   }
 
@@ -41,25 +42,26 @@ class SearchArtworks extends Component {
     return (
       <div id="Srch-wrapper" className="left-lg right-lg">
         <InputGroup>
-          <InputGroup.Prepend>
-            <Button
-              variant="outline-secondary"
-              type="submit"
-              onClick={this.onClickSearch}
-              id="submit-button"
-            >
-              Search
-            </Button>
-          </InputGroup.Prepend>
           <FormControl
             type="text"
             placeholder="City"
             value={valueCriteria}
             onChange={this.onChangeCriteria}
           />
+          { valueCriteria.length > 0 && <InputGroup.Append>
+              <Button variant="outline-secondary" onClick={this.onClickClear}>
+                <i className="fa fa-eraser"></i>
+              </Button>
+            </InputGroup.Append>
+          }
           <InputGroup.Append>
-            <Button variant="outline-secondary" onClick={this.onClickClear}>
-              X
+            <Button
+              variant="outline-secondary"
+              type="submit"
+              onClick={this.onClickSearch}
+              id="submit-button"
+            >
+              <i className="fa fa-search-plus"></i>
             </Button>
           </InputGroup.Append>
         </InputGroup>
