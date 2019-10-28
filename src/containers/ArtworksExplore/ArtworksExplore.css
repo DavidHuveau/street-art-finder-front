@@ -5,12 +5,11 @@
 }
 
 #Exp-wrapper > header {
-  height: 98px;
-  text-align: center;
+  height: 49px;
 }
 
 #Exp-wrapper > footer {
-  height: 64px;
+  height: 49px;
 }
 
 #Exp-wrapper > main {
@@ -34,6 +33,9 @@
 }
 
 @media screen and (max-width: 425px) {
+  #Exp-wrapper > header {
+    height: 98px;
+  }
   #Exp-wrapper .container-fluid .row H1{
     text-align: center;
   }
