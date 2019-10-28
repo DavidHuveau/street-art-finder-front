@@ -48,7 +48,7 @@ class SearchArtworks extends Component {
     const { valueCriteria } = this.state;
 
     return (
-      <Form id="Srch-wrapper" className="left-lg right-lg" onSubmit={this.onSubmit}>
+      <Form id="Srch-wrapper" onSubmit={this.onSubmit}>
         <InputGroup>
           <FormControl
             type="text"

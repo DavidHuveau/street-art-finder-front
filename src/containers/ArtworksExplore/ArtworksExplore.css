@@ -7,24 +7,34 @@
 #Exp-wrapper > header {
   height: 98px;
   text-align: center;
-  /* border: 1px solid red; */
 }
 
 #Exp-wrapper > footer {
   height: 64px;
-  /* border: 1px solid red; */
 }
 
 #Exp-wrapper > main {
   flex: 1;
-  /* border: 1px solid red; */
 }
 
-/* @media screen and (max-width: 960px) {
-  .mobileOnly {
-      display: block;
+#Exp-wrapper .container-fluid{
+  height: 100%;
+}
+
+#Exp-wrapper .container-fluid .row{
+  height: 100%;
+}
+
+#Exp-wrapper .container-fluid .row > div{
+  margin:auto;
+}
+
+#Exp-wrapper .container-fluid .row H1{
+  text-align: left;
+}
+
+@media screen and (max-width: 425px) {
+  #Exp-wrapper .container-fluid .row H1{
+    text-align: center;
   }
-  .desktopOnly {
-      display: none;
-  }
-} */
+}
