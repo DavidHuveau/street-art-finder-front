@@ -58,7 +58,7 @@ class SearchArtworks extends Component {
             onKeyPress={this.onKeyPress}
           />
           { valueCriteria.length > 0 && <InputGroup.Append>
-              <Button variant="outline-secondary" className= "" onClick={this.onClickClear}>
+              <Button variant="outline-secondary" onClick={this.onClickClear}>
                 <i className="fa fa-eraser"></i>
               </Button>
             </InputGroup.Append>
@@ -69,7 +69,7 @@ class SearchArtworks extends Component {
               type="submit"
               id="submit-button"
             >
-              <i className="fa fa-search-plus"></i>
+              <i className="fa fa-search"></i>
             </Button>
           </InputGroup.Append>
         </InputGroup>

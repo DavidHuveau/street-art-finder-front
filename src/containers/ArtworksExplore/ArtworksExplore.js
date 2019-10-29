@@ -30,7 +30,7 @@ const ArtworksExplore = props => {
           <Col sm={12} md={6} xl={8}>
             <h1 className="main-color">Street Art Finder</h1>
           </Col>
-          <Col sm={12} md={6} xl={4}>
+          <Col sm={12} md={6} xl={4} className="search">
             <SearchArtworks onSearch={getData} />
           </Col>
           </Row>
