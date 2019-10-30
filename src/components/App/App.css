@@ -88,3 +88,8 @@ h3 {
 figure {
   margin: 0px;
 }
+
+.fab {
+  font-weight: 900;
+  color: rgb(108, 117, 125);
+}

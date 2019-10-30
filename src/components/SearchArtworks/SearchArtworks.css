@@ -5,3 +5,16 @@
 #Srch-wrapper button {
   border-color: rgb(206, 212, 218);
 }
+
+.separator {
+  width: 1px;
+  height: 32px;
+  background-color: rgb(206, 212, 218);
+  margin: 3px 14px;
+}
+
+@media screen and (max-width: 425px) {
+  .separator {
+    margin: 3px 7px;
+  }
+}

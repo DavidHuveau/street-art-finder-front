@@ -72,6 +72,11 @@ class SearchArtworks extends Component {
               <i className="fa fa-search"></i>
             </Button>
           </InputGroup.Append>
+          <div className="separator">
+          </div>
+          <a href="https://www.instagram.com/street.art.finder/" style={{ margin:"auto" }}>
+            <i className="fab fa-instagram" style={{ fontSize:"17px" }}></i>
+          </a>
         </InputGroup>
       </Form>
     );
