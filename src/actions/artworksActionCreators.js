@@ -10,7 +10,7 @@ export const fetchArtworks = city => {
 
   return {
     [RSAA]: {
-      endpoint: `http://localhost:8080/api/v1/artworks/searchByCity/?city=${city}&countryCode=FR`,
+      endpoint: `/api/v1/artworks/searchByCity/?city=${city}&countryCode=FR`,
       method: "GET",
       types: [
         RECEIVE_ARTWORKS_REQUEST,
@@ -30,8 +30,7 @@ export const fetchProposals = token => {
 
   return {
     [RSAA]: {
-      // endpoint: `http://localhost:8080/api/v1/artworks/`,
-      endpoint: `http://localhost:8080/api/v1/proposals/`,
+      endpoint: `/api/v1/proposals/`,
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`

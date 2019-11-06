@@ -33,7 +33,7 @@ export const createArtwork = artwork => {
 
   return {
     [RSAA]: {
-      endpoint: `http://localhost:8080/api/v1/artworks/`,
+      endpoint: `/api/v1/artworks/`,
       method: "POST",
       body: formData,
       types: [
@@ -59,7 +59,7 @@ export const publishProposal = (id, token) => {
 
   return {
     [RSAA]: {
-      endpoint: `http://localhost:8080/api/v1/proposals/publish/${id}`,
+      endpoint: `/api/v1/proposals/publish/${id}`,
       method: "PUT",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -86,7 +86,7 @@ export const noPublishProposal = (id, token) => {
 
   return {
     [RSAA]: {
-      endpoint: `http://localhost:8080/api/v1/proposals/noPublish/${id}`,
+      endpoint: `/api/v1/proposals/noPublish/${id}`,
       method: "PUT",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",

@@ -32,7 +32,7 @@ const ArtworkProposalCard = ({
         <figure>
           <Card.Img
             variant="top"
-            src={`http://localhost:8080/api/v1/public/thumbnails/${photoFileName}`}
+            src={`/api/v1/public/thumbnails/${photoFileName}`}
             alt={photoFileName}
           />
         </figure>

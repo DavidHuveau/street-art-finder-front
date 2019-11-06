@@ -28,7 +28,7 @@ class SearchArtworks extends Component {
     const { valueCriteria } = this.state;
     const { onSearch } = this.props;
 
-    onSearch(valueCriteria);
+    if (valueCriteria) onSearch(valueCriteria);
   }
 
   onClickClear() {
@@ -74,7 +74,7 @@ class SearchArtworks extends Component {
           </InputGroup.Append>
           <div className="separator">
           </div>
-          <a href="https://www.instagram.com/street.art.finder/" style={{ margin:"auto" }}>
+          <a href="https://www.instagram.com/street.art.finder/" target="_blank" style={{ margin:"auto" }}>
             <i className="fab fa-instagram" style={{ fontSize:"17px" }}></i>
           </a>
         </InputGroup>

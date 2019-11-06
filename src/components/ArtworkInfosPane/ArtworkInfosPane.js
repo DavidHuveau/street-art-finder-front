@@ -33,7 +33,7 @@ class ArtworkInfosPane extends Component {
     } = selectedArtwork;
 
     // const status = isActivated ? "active" : "inactive";
-    const urlPicture = `http://localhost:8080/api/v1/public/artworks/${photoFileName}`;
+    const urlPicture = `/api/v1/public/artworks/${photoFileName}`;
     const addressInLine = `${adressStreet}, ${zipCode}, ${city}`;
 
     return (

@@ -23,7 +23,7 @@ export default props => {
       <Popup>
         <figure>
           <img
-            src={`http://localhost:8080/api/v1/public/thumbnails/${photoFileName}`}
+            src={`/api/v1/public/thumbnails/${photoFileName}`}
             alt={photoFileName}
             // width="200px"
           />
@@ -34,15 +34,3 @@ export default props => {
     </Marker>
   );
 };
-
-// SearchArtworks.propTypes = {
-//   onSearch: PropTypes.func.isRequired
-// };
-
-// SearchArtworks.defaultProps = {
-//   onSearch: () => {}
-// };
-
-// key={i}
-// mark={artworkInfos}
-// showArtworkInfosPane={() => showArtworkInfosPane(artworkInfos)}
