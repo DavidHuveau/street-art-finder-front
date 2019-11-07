@@ -93,3 +93,7 @@ figure {
   font-weight: 900;
   color: rgb(108, 117, 125);
 }
+
+.Toastify__toast-body {
+  text-align: center;
+}
